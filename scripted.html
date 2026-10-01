@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scripted | Scott McGuirk</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f1eb;
+  color: #111;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* NAV */
+
+nav {
+  padding: 25px 5%;
+  border-bottom: 1px solid #d4d1ca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  opacity: .45;
+}
+
+/* HERO */
+
+.hero {
+  padding: 100px 5% 115px;
+}
+
+.back {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 70px;
+}
+
+.back:hover {
+  opacity: .5;
+}
+
+.number {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  color: #777;
+}
+
+h1 {
+  font-size: clamp(75px, 12vw, 165px);
+  line-height: .82;
+  letter-spacing: -7px;
+  margin-bottom: 50px;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 70px;
+}
+
+.skills {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.hero-copy {
+  font-size: clamp(21px, 2.3vw, 32px);
+  line-height: 1.3;
+  max-width: 800px;
+}
+
+/* SHOW */
+
+.show {
+  padding: 110px 5%;
+  border-top: 1px solid #d4d1ca;
+}
+
+.show.dark {
+  background: #101010;
+  color: white;
+  border: 0;
+}
+
+.show-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.show-meta {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777;
+}
+
+.dark .show-meta {
+  color: #888;
+}
+
+.show-title h2 {
+  font-size: clamp(43px, 6vw, 78px);
+  line-height: .95;
+  letter-spacing: -4px;
+  margin-bottom: 15px;
+}
+
+.show-title p {
+  font-size: 16px;
+  color: #666;
+}
+
+.dark .show-title p {
+  color: #999;
+}
+
+/* FEATURE IMAGE */
+
+.show-image {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: #222;
+  margin-bottom: 45px;
+}
+
+.show-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* EPISODES */
+
+.episodes {
+  border-top: 1px solid #ccc;
+}
+
+.dark .episodes {
+  border-color: #333;
+}
+
+.episode {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 22px 5px;
+  border-bottom: 1px solid #ccc;
+  transition: padding .2s ease;
+}
+
+.dark .episode {
+  border-color: #333;
+}
+
+.episode:hover {
+  padding-left: 15px;
+}
+
+.episode-number {
+  font-size: 12px;
+  color: #888;
+}
+
+.episode-title {
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 700;
+}
+
+.watch {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* NEXT */
+
+.next {
+  background: #101010;
+  color: white;
+  padding: 100px 5%;
+}
+
+.next-label {
+  color: #777;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.next a {
+  display: inline-block;
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -4px;
+}
+
+.next a:hover {
+  opacity: .55;
+}
+
+footer {
+  background: #101010;
+  color: #666;
+  padding: 25px 5%;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+  nav {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 65px 20px 80px;
+  }
+
+  .back {
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    letter-spacing: -4px;
+  }
+
+  .hero-bottom,
+  .show-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .show {
+    padding: 75px 20px;
+  }
+
+  .show-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .episode {
+    grid-template-columns: 40px 1fr auto;
+  }
+
+  .watch {
+    font-size: 11px;
+  }
+
+  .next {
+    padding: 75px 20px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+  <a href="index.html" class="logo">
+    SCOTT McGUIRK
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="mailto:scottiemcguirk@gmail.com">Contact</a>
+  </div>
+
+</nav>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="wrap">
+
+  <a class="back" href="index.html#work">
+    ← Selected Work
+  </a>
+
+  <div class="number">
+    01
+  </div>
+
+  <h1>
+    Scripted
+  </h1>
+
+  <div class="hero-bottom">
+
+    <div class="skills">
+      Writing · Story · Character
+    </div>
+
+    <div class="hero-copy">
+      Selected television writing credits across animated
+      comedy and children's entertainment.
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- DINO RANCH -->
+
+<section class="show dark">
+
+<div class="wrap">
+
+  <div class="show-header">
+
+    <div class="show-meta">
+      Writer · 2 Selected Episodes
+    </div>
+
+    <div class="show-title">
+      <h2>Dino Ranch</h2>
+      <p>Animated Television Series</p>
+    </div>
+
+  </div>
+
+  <div class="show-image">
+    <img
+      src="https://img.youtube.com/vi/GDA1sSIngbk/hqdefault.jpg"
+      alt="Dino Ranch">
+  </div>
+
+  <div class="episodes">
+
+    <a
+      class="episode"
+      href="https://www.youtube.com/watch?v=GDA1sSIngbk"
+      target="_blank">
+
+      <span class="episode-number">01</span>
+      <span class="episode-title">Jane's Perfect Present</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+    <a
+      class="episode"
+      href="https://www.youtube.com/watch?v=IuSGEREPViE"
+      target="_blank">
+
+      <span class="episode-number">02</span>
+      <span class="episode-title">Tango's BFF</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- GARY'S MAGIC FORT -->
+
+<section class="show">
+
+<div class="wrap">
+
+  <div class="show-header">
+
+    <div class="show-meta">
+      Writer · 4 Selected Episodes
+    </div>
+
+    <div class="show-title">
+      <h2>Gary's Magic Fort</h2>
+      <p>Children's Television Series</p>
+    </div>
+
+  </div>
+
+  <div class="show-image">
+    <img
+      src="https://img.youtube.com/vi/vSd02mtWG8w/hqdefault.jpg"
+      alt="Gary's Magic Fort">
+  </div>
+
+  <div class="episodes">
+
+    <a class="episode"
+       href="https://www.youtube.com/watch?v=vSd02mtWG8w"
+       target="_blank">
+
+      <span class="episode-number">01</span>
+      <span class="episode-title">Gary's Cousin Conundrum</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+    <a class="episode"
+       href="https://www.youtube.com/watch?v=gPypqTVi9vM"
+       target="_blank">
+
+      <span class="episode-number">02</span>
+      <span class="episode-title">All Dressed Up</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+    <a class="episode"
+       href="https://www.youtube.com/watch?v=9Irpm2Ehdb0"
+       target="_blank">
+
+      <span class="episode-number">03</span>
+      <span class="episode-title">Gary &amp; The Cupcake Culprit</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+    <a class="episode"
+       href="https://www.youtube.com/watch?v=v02jyzMciOM"
+       target="_blank">
+
+      <span class="episode-number">04</span>
+      <span class="episode-title">Gary's Toy Trouble</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- KINGDOM FORCE -->
+
+<section class="show dark">
+
+<div class="wrap">
+
+  <div class="show-header">
+
+    <div class="show-meta">
+      Writer · 3 Selected Episodes
+    </div>
+
+    <div class="show-title">
+      <h2>Kingdom Force</h2>
+      <p>Animated Television Series</p>
+    </div>
+
+  </div>
+
+  <div class="show-image">
+    <img
+      src="https://img.youtube.com/vi/k9kxaqUkvyQ/hqdefault.jpg"
+      alt="Kingdom Force">
+  </div>
+
+  <div class="episodes">
+
+    <a class="episode"
+       href="https://www.youtube.com/watch?v=k9kxaqUkvyQ"
+       target="_blank">
+
+      <span class="episode-number">01</span>
+      <span class="episode-title">Moustivus</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+    <a class="episode"
+       href="https://www.youtube.com/watch?v=DrPb_q3P_PE"
+       target="_blank">
+
+      <span class="episode-number">02</span>
+      <span class="episode-title">Ready, Set, Slow!</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+    <a class="episode"
+       href="https://www.youtube.com/watch?v=XwOS-kmlSjI"
+       target="_blank">
+
+      <span class="episode-number">03</span>
+      <span class="episode-title">Cold Comfort</span>
+      <span class="watch">Watch ↗</span>
+
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- NEXT CATEGORY -->
+
+<section class="next">
+
+<div class="wrap">
+
+  <div class="next-label">
+    Next
+  </div>
+
+  <a href="short-form.html">
+    Short-Form +<br>
+    Interstitials →
+  </a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+  © 2026 Scott McGuirk
+</footer>
+
+</body>
+</html>
