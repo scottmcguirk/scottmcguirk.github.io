@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Short-Form + Interstitials | Scott McGuirk</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f1eb;
+  color: #111;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* NAV */
+
+nav {
+  padding: 25px 5%;
+  border-bottom: 1px solid #d4d1ca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  opacity: .45;
+}
+
+/* HERO */
+
+.hero {
+  padding: 90px 5% 105px;
+  background: #101010;
+  color: #fff;
+}
+
+.back {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 65px;
+  color: #aaa;
+}
+
+.back:hover {
+  opacity: .5;
+}
+
+.number {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(62px, 10vw, 140px);
+  line-height: .84;
+  letter-spacing: -7px;
+  margin-bottom: 50px;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 70px;
+}
+
+.skills {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.hero-copy {
+  font-size: clamp(21px, 2.3vw, 31px);
+  line-height: 1.3;
+  max-width: 750px;
+}
+
+/* SECTION */
+
+.section {
+  padding: 95px 5% 115px;
+  border-top: 1px solid #ccc8bf;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777;
+  padding-top: 8px;
+}
+
+.section-title h2 {
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: .95;
+  letter-spacing: -3px;
+  margin-bottom: 16px;
+}
+
+.section-title p {
+  max-width: 720px;
+  color: #555;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* FEATURED GRID */
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px 28px;
+}
+
+/* PROJECT CARDS */
+
+.project-card {
+  min-width: 0;
+}
+
+.thumbnail {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #ddd;
+  margin-bottom: 20px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.025);
+}
+
+.play {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 48px;
+  height: 48px;
+  background: #f3f1eb;
+  color: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: transform .2s ease;
+}
+
+.thumbnail:hover .play {
+  transform: scale(1.08);
+}
+
+.project-series {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: clamp(22px, 2vw, 29px);
+  line-height: 1.1;
+  letter-spacing: -.7px;
+  margin-bottom: 9px;
+}
+
+.project-role {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: #777;
+  margin-bottom: 13px;
+}
+
+.project-description {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* SERIES BLOCK */
+
+.series-block {
+  margin-bottom: 85px;
+}
+
+.series-block:last-child {
+  margin-bottom: 0;
+}
+
+.series-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  margin-bottom: 35px;
+}
+
+.series-meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777;
+  padding-top: 7px;
+}
+
+.series-info h3 {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 10px;
+}
+
+.series-info p {
+  color: #666;
+  font-size: 15px;
+}
+
+/* COMPACT GRID */
+
+.compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 22px;
+}
+
+.compact-grid .thumbnail {
+  margin-bottom: 16px;
+}
+
+.compact-grid .project-title {
+  font-size: clamp(18px, 1.6vw, 23px);
+}
+
+/* NEXT */
+
+.next {
+  background: #101010;
+  color: #fff;
+  padding: 100px 5%;
+}
+
+.next-label {
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.next a {
+  display: inline-block;
+  font-size: clamp(40px, 6vw, 75px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.next a:hover {
+  opacity: .55;
+}
+
+footer {
+  background: #101010;
+  color: #666;
+  padding: 25px 5%;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+  nav {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 65px 20px 80px;
+  }
+
+  .back {
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    letter-spacing: -4px;
+  }
+
+  .hero-bottom,
+  .section-heading,
+  .series-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section {
+    padding: 70px 20px 85px;
+  }
+
+  .featured-grid,
+  .compact-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .series-block {
+    margin-bottom: 70px;
+  }
+
+  .next {
+    padding: 75px 20px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+  <a href="index.html" class="logo">
+    SCOTT McGUIRK
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="mailto:scottiemcguirk@gmail.com">Contact</a>
+  </div>
+
+</nav>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="wrap">
+
+  <a class="back" href="index.html#work">
+    ← Selected Work
+  </a>
+
+  <div class="number">02</div>
+
+  <h1>
+    Short-Form +<br>
+    Interstitials
+  </h1>
+
+  <div class="hero-bottom">
+
+    <div class="skills">
+      Writing · Directing · Producing
+    </div>
+
+    <div class="hero-copy">
+      Short-form entertainment built around character,
+      comedy, music and storytelling — from script through production.
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURED -->
+
+<section class="section">
+
+<div class="wrap">
+
+  <div class="section-heading">
+
+    <div class="section-label">
+      Featured
+    </div>
+
+    <div class="section-title">
+
+      <h2>From page to screen.</h2>
+
+      <p>
+        Selected pieces where I worked across writing,
+        directing and producing to take an idea from
+        concept through finished production.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="featured-grid">
+
+    <!-- ROCK N ROLL RHYMES -->
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=b2DoroVICP8"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/b2DoroVICP8/hqdefault.jpg"
+          alt="Rock N' Roll Rhymes - Whitney Houston">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="project-series">
+        Rock N' Roll Rhymes · CBC Kids
+      </div>
+
+      <h3 class="project-title">
+        Whitney Houston / This Old Man
+      </h3>
+
+      <div class="project-role">
+        Writer · Director · Producer
+      </div>
+
+      <p class="project-description">
+        Project description coming soon.
+      </p>
+
+    </article>
+
+
+    <!-- HEALTHY HABITS -->
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=P59NTQof4SY"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/P59NTQof4SY/hqdefault.jpg"
+          alt="Healthy Habits - Bathtime">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="project-series">
+        Healthy Habits · CBC Kids
+      </div>
+
+      <h3 class="project-title">
+        Bathtime
+      </h3>
+
+      <div class="project-role">
+        Writer · Director · Producer
+      </div>
+
+      <p class="project-description">
+        Project description coming soon.
+      </p>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- MORE SELECTED WORK -->
+
+<section class="section">
+
+<div class="wrap">
+
+  <div class="section-heading">
+
+    <div class="section-label">
+      More Selected Work
+    </div>
+
+    <div class="section-title">
+
+      <h2>Writing across formats.</h2>
+
+      <p>
+        Selected short-form writing across musical comedy,
+        character pieces and topical storytelling.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ROCK N ROLL RHYMES -->
+
+  <div class="series-block">
+
+    <div class="series-header">
+
+      <div class="series-meta">
+        CBC Kids · Writer
+      </div>
+
+      <div class="series-info">
+        <h3>Rock N' Roll Rhymes</h3>
+        <p>
+          Classic nursery rhymes reimagined through
+          the sounds and styles of iconic musicians.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="compact-grid">
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=Eomqyid_e0w"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/Eomqyid_e0w/hqdefault.jpg"
+            alt="Eurythmics / Down By The Bay">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Eurythmics / Down By The Bay
+        </h4>
+
+        <div class="project-role">
+          Writer
+        </div>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=QHr897ZENsc"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/QHr897ZENsc/hqdefault.jpg"
+            alt="George Michael / The More We Get Together">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          George Michael / The More We Get Together
+        </h4>
+
+        <div class="project-role">
+          Writer
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- SPECIAL DELIVERY -->
+
+  <div class="series-block">
+
+    <div class="series-header">
+
+      <div class="series-meta">
+        CBC Kids · Writer
+      </div>
+
+      <div class="series-info">
+        <h3>Special Delivery</h3>
+        <p>
+          Selected episodes exploring celebrations,
+          communities and lived experiences.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="compact-grid">
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=oefMLiAwpk8"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/oefMLiAwpk8/hqdefault.jpg"
+            alt="Special Delivery - Pride Month">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Pride Month
+        </h4>
+
+        <div class="project-role">
+          Writer
+        </div>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=UcQhruIyk60"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/UcQhruIyk60/hqdefault.jpg"
+            alt="Special Delivery - Eid">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Eid
+        </h4>
+
+        <div class="project-role">
+          Writer
+        </div>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=8R6mAhLPJFU"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/8R6mAhLPJFU/hqdefault.jpg"
+            alt="Special Delivery - Autism Awareness Month">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Autism Awareness Month
+        </h4>
+
+        <div class="project-role">
+          Writer
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- DR CHEDDAR -->
+
+  <div class="series-block">
+
+    <div class="series-header">
+
+      <div class="series-meta">
+        TVOkids · Writer
+      </div>
+
+      <div class="series-info">
+        <h3>Dr. Cheddar</h3>
+        <p>
+          Selected episodes from the preschool comedy series.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="compact-grid">
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=TzLHkdG1bus"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/TzLHkdG1bus/hqdefault.jpg"
+            alt="Dr. Cheddar - Spook-A-Boo!">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">Spook-A-Boo!</h4>
+
+        <div class="project-role">Writer</div>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=3l6_swQrvfc"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/3l6_swQrvfc/hqdefault.jpg"
+            alt="Dr. Cheddar - Caught in Charm's Way">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Caught in Charm's Way
+        </h4>
+
+        <div class="project-role">Writer</div>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=5n-f2SsvP2w"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/5n-f2SsvP2w/hqdefault.jpg"
+            alt="Dr. Cheddar - I Dream of Screenie">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          I Dream of Screenie
+        </h4>
+
+        <div class="project-role">Writer</div>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=gqtwg4Vwb9w"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/gqtwg4Vwb9w/hqdefault.jpg"
+            alt="Dr. Cheddar - Keep Calm & Dance On">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Keep Calm &amp; Dance On
+        </h4>
+
+        <div class="project-role">Writer</div>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=frWnHQL8VfM"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/frWnHQL8VfM/hqdefault.jpg"
+            alt="Dr. Cheddar - Scaredy Pup">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Scaredy Pup
+        </h4>
+
+        <div class="project-role">Writer</div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+
+  <!-- OPPO-BOTS -->
+
+  <div class="series-block">
+
+    <div class="series-header">
+
+      <div class="series-meta">
+        CBC Kids · Writer
+      </div>
+
+      <div class="series-info">
+        <h3>Oppo-Bots</h3>
+        <p>
+          Short-form character comedy built around opposites.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="compact-grid">
+
+      <article class="project-card">
+
+        <a class="thumbnail"
+           href="https://www.youtube.com/watch?v=H9UowqqZAbk"
+           target="_blank">
+
+          <img
+            src="https://img.youtube.com/vi/H9UowqqZAbk/hqdefault.jpg"
+            alt="Oppo-Bots - Hello & Goodbye">
+
+          <span class="play">▶</span>
+
+        </a>
+
+        <h4 class="project-title">
+          Hello &amp; Goodbye
+        </h4>
+
+        <div class="project-role">
+          Writer
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- NEXT -->
+
+<section class="next">
+
+<div class="wrap">
+
+  <div class="next-label">
+    Next
+  </div>
+
+  <a href="promos.html">
+    Promos +<br>
+    Campaigns →
+  </a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+  © 2026 Scott McGuirk
+</footer>
+
+</body>
+</html>
