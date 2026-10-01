@@ -230,33 +230,6 @@ h1 {
   letter-spacing: .1px;
 }
 
-/* ROCK N ROLL FEATURE */
-
-.rock-feature {
-  display: grid;
-  grid-template-columns: 1.35fr .65fr;
-  gap: 28px;
-  margin-bottom: 50px;
-  align-items: start;
-}
-
-.rock-feature .project-title {
-  font-size: clamp(25px, 2.4vw, 34px);
-}
-
-.rock-supporting {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-/* SINGLE PROJECT */
-
-.single-project {
-  max-width: 760px;
-  margin: auto;
-}
-
 /* NEXT */
 
 .next {
@@ -326,9 +299,7 @@ footer {
     margin-bottom: 40px;
   }
 
-  .project-grid,
-  .rock-feature,
-  .rock-supporting {
+.project-grid {rhymes
     grid-template-columns: 1fr;
     gap: 45px;
   }
@@ -421,7 +392,7 @@ footer {
   </div>
 
 
-  <div class="rock-feature">
+  <div class="project-grid">
 
     <article class="project-card">
 
@@ -445,65 +416,57 @@ footer {
         Writer · Director · Producer
       </div>
 
-      <p class="project-description">
-        Project description coming soon.
-      </p>
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=Eomqyid_e0w"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/Eomqyid_e0w/hqdefault.jpg"
+          alt="Eurythmics / Down By The Bay">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Eurythmics / Down By The Bay
+      </h3>
+
+      <div class="project-role">
+        Writer
+      </div>
 
     </article>
 
 
-    <div class="rock-supporting">
+    <article class="project-card">
 
-      <article class="project-card">
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=QHr897ZENsc"
+         target="_blank">
 
-        <a class="thumbnail"
-           href="https://www.youtube.com/watch?v=Eomqyid_e0w"
-           target="_blank">
+        <img
+          src="https://img.youtube.com/vi/QHr897ZENsc/hqdefault.jpg"
+          alt="George Michael / The More We Get Together">
 
-          <img
-            src="https://img.youtube.com/vi/Eomqyid_e0w/hqdefault.jpg"
-            alt="Eurythmics / Down By The Bay">
+        <span class="play">▶</span>
 
-          <span class="play">▶</span>
+      </a>
 
-        </a>
+      <h3 class="project-title">
+        George Michael / The More We Get Together
+      </h3>
 
-        <h3 class="project-title">
-          Eurythmics / Down By The Bay
-        </h3>
+      <div class="project-role">
+        Writer
+      </div>
 
-        <div class="project-role">
-          Writer
-        </div>
-
-      </article>
-
-
-      <article class="project-card">
-
-        <a class="thumbnail"
-           href="https://www.youtube.com/watch?v=QHr897ZENsc"
-           target="_blank">
-
-          <img
-            src="https://img.youtube.com/vi/QHr897ZENsc/hqdefault.jpg"
-            alt="George Michael / The More We Get Together">
-
-          <span class="play">▶</span>
-
-        </a>
-
-        <h3 class="project-title">
-          George Michael / The More We Get Together
-        </h3>
-
-        <div class="project-role">
-          Writer
-        </div>
-
-      </article>
-
-    </div>
+    </article>
 
   </div>
 
@@ -534,7 +497,7 @@ footer {
   </div>
 
 
-  <div class="single-project">
+<div class="project-grid">
 
     <article class="project-card">
 
@@ -828,7 +791,7 @@ footer {
   </div>
 
 
-  <div class="single-project">
+<div class="project-grid">
 
     <article class="project-card">
 
