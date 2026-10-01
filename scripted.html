@@ -29,7 +29,7 @@ a {
 }
 
 .wrap {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: auto;
 }
 
@@ -61,7 +61,7 @@ nav {
 /* HERO */
 
 .hero {
-  padding: 100px 5% 115px;
+  padding: 90px 5% 105px;
 }
 
 .back {
@@ -69,7 +69,7 @@ nav {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 70px;
+  margin-bottom: 65px;
 }
 
 .back:hover {
@@ -79,12 +79,12 @@ nav {
 .number {
   font-size: 13px;
   letter-spacing: 2px;
-  margin-bottom: 18px;
   color: #777;
+  margin-bottom: 15px;
 }
 
 h1 {
-  font-size: clamp(75px, 12vw, 165px);
+  font-size: clamp(75px, 12vw, 155px);
   line-height: .82;
   letter-spacing: -7px;
   margin-bottom: 50px;
@@ -92,7 +92,7 @@ h1 {
 
 .hero-bottom {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.7fr;
   gap: 70px;
 }
 
@@ -103,22 +103,16 @@ h1 {
 }
 
 .hero-copy {
-  font-size: clamp(21px, 2.3vw, 32px);
+  font-size: clamp(21px, 2.3vw, 31px);
   line-height: 1.3;
-  max-width: 800px;
+  max-width: 750px;
 }
 
 /* SHOW */
 
 .show {
-  padding: 110px 5%;
-  border-top: 1px solid #d4d1ca;
-}
-
-.show.dark {
-  background: #101010;
-  color: white;
-  border: 0;
+  padding: 95px 5% 115px;
+  border-top: 1px solid #ccc8bf;
 }
 
 .show-header {
@@ -129,91 +123,161 @@ h1 {
 }
 
 .show-meta {
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: #777;
+  padding-top: 8px;
 }
 
-.dark .show-meta {
-  color: #888;
-}
-
-.show-title h2 {
-  font-size: clamp(43px, 6vw, 78px);
+.show-info h2 {
+  font-size: clamp(42px, 5.5vw, 72px);
   line-height: .95;
-  letter-spacing: -4px;
-  margin-bottom: 15px;
+  letter-spacing: -3px;
+  margin-bottom: 12px;
 }
 
-.show-title p {
-  font-size: 16px;
-  color: #666;
+.show-type {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 22px;
 }
 
-.dark .show-title p {
-  color: #999;
+.show-logline {
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
 }
 
-/* FEATURE IMAGE */
+/* EPISODE GRID */
 
-.show-image {
-  width: 100%;
-  aspect-ratio: 16 / 7;
+.episode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 55px 28px;
+}
+
+.episode-card {
+  min-width: 0;
+}
+
+.thumbnail {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #222;
-  margin-bottom: 45px;
+  background: #ddd;
+  margin-bottom: 20px;
 }
 
-.show-image img {
+.thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform .4s ease;
 }
 
-/* EPISODES */
-
-.episodes {
-  border-top: 1px solid #ccc;
+.thumbnail:hover img {
+  transform: scale(1.025);
 }
 
-.dark .episodes {
-  border-color: #333;
-}
-
-.episode {
-  display: grid;
-  grid-template-columns: 70px 1fr auto;
-  gap: 20px;
+.play {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 48px;
+  height: 48px;
+  background: #f3f1eb;
+  color: #111;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
-  padding: 22px 5px;
-  border-bottom: 1px solid #ccc;
-  transition: padding .2s ease;
+  justify-content: center;
+  font-size: 16px;
+  transition: transform .2s ease;
 }
 
-.dark .episode {
-  border-color: #333;
+.thumbnail:hover .play {
+  transform: scale(1.08);
 }
 
-.episode:hover {
-  padding-left: 15px;
-}
-
-.episode-number {
-  font-size: 12px;
-  color: #888;
+.episode-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 9px;
 }
 
 .episode-title {
-  font-size: clamp(18px, 2vw, 25px);
-  font-weight: 700;
+  font-size: clamp(21px, 2vw, 28px);
+  line-height: 1.1;
+  letter-spacing: -.7px;
 }
 
-.watch {
-  font-size: 13px;
-  text-transform: uppercase;
+.episode-number {
+  font-size: 11px;
   letter-spacing: 1px;
+  color: #888;
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+.episode-role {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  color: #777;
+  margin-bottom: 13px;
+}
+
+.episode-description {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 580px;
+}
+
+/* WRITER NOTE - ready for later */
+
+details {
+  margin-top: 18px;
+  border-top: 1px solid #d0ccc4;
+  border-bottom: 1px solid #d0ccc4;
+}
+
+summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 0;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  font-size: 16px;
+  line-height: 10px;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+.writer-note {
+  padding: 0 0 18px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 /* NEXT */
@@ -226,7 +290,7 @@ h1 {
 
 .next-label {
   color: #777;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
@@ -234,10 +298,10 @@ h1 {
 
 .next a {
   display: inline-block;
-  font-size: clamp(40px, 6vw, 80px);
+  font-size: clamp(40px, 6vw, 75px);
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -4px;
+  letter-spacing: -3px;
 }
 
 .next a:hover {
@@ -278,19 +342,12 @@ footer {
   }
 
   .show {
-    padding: 75px 20px;
+    padding: 70px 20px 85px;
   }
 
-  .show-image {
-    aspect-ratio: 16 / 9;
-  }
-
-  .episode {
-    grid-template-columns: 40px 1fr auto;
-  }
-
-  .watch {
-    font-size: 11px;
+  .episode-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
   }
 
   .next {
@@ -301,6 +358,7 @@ footer {
 
 </style>
 </head>
+
 
 <body>
 
@@ -331,13 +389,9 @@ footer {
     ← Selected Work
   </a>
 
-  <div class="number">
-    01
-  </div>
+  <div class="number">01</div>
 
-  <h1>
-    Scripted
-  </h1>
+  <h1>Scripted</h1>
 
   <div class="hero-bottom">
 
@@ -359,7 +413,7 @@ footer {
 
 <!-- DINO RANCH -->
 
-<section class="show dark">
+<section class="show">
 
 <div class="wrap">
 
@@ -369,42 +423,105 @@ footer {
       Writer · 2 Selected Episodes
     </div>
 
-    <div class="show-title">
+    <div class="show-info">
+
       <h2>Dino Ranch</h2>
-      <p>Animated Television Series</p>
+
+      <div class="show-type">
+        Animated Television Series
+      </div>
+
+      <div class="show-logline">
+        Series logline coming soon.
+      </div>
+
     </div>
 
   </div>
 
-  <div class="show-image">
-    <img
-      src="https://img.youtube.com/vi/GDA1sSIngbk/hqdefault.jpg"
-      alt="Dino Ranch">
-  </div>
 
-  <div class="episodes">
+  <div class="episode-grid">
 
-    <a
-      class="episode"
-      href="https://www.youtube.com/watch?v=GDA1sSIngbk"
-      target="_blank">
+    <!-- EPISODE 1 -->
 
-      <span class="episode-number">01</span>
-      <span class="episode-title">Jane's Perfect Present</span>
-      <span class="watch">Watch ↗</span>
+    <article class="episode-card">
 
-    </a>
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=GDA1sSIngbk"
+         target="_blank">
 
-    <a
-      class="episode"
-      href="https://www.youtube.com/watch?v=IuSGEREPViE"
-      target="_blank">
+        <img
+          src="https://img.youtube.com/vi/GDA1sSIngbk/hqdefault.jpg"
+          alt="Jane's Perfect Present">
 
-      <span class="episode-number">02</span>
-      <span class="episode-title">Tango's BFF</span>
-      <span class="watch">Watch ↗</span>
+        <span class="play">▶</span>
 
-    </a>
+      </a>
+
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Jane's Perfect Present
+        </h3>
+        <span class="episode-number">01</span>
+      </div>
+
+      <div class="episode-role">
+        Writer
+      </div>
+
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
+
+
+    <!-- EPISODE 2 -->
+
+    <article class="episode-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=IuSGEREPViE"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/IuSGEREPViE/hqdefault.jpg"
+          alt="Tango's BFF">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Tango's BFF
+        </h3>
+        <span class="episode-number">02</span>
+      </div>
+
+      <div class="episode-role">
+        Writer
+      </div>
+
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
 
   </div>
 
@@ -425,60 +542,179 @@ footer {
       Writer · 4 Selected Episodes
     </div>
 
-    <div class="show-title">
+    <div class="show-info">
+
       <h2>Gary's Magic Fort</h2>
-      <p>Children's Television Series</p>
+
+      <div class="show-type">
+        Children's Television Series
+      </div>
+
+      <div class="show-logline">
+        Series logline coming soon.
+      </div>
+
     </div>
 
   </div>
 
-  <div class="show-image">
-    <img
-      src="https://img.youtube.com/vi/vSd02mtWG8w/hqdefault.jpg"
-      alt="Gary's Magic Fort">
-  </div>
 
-  <div class="episodes">
+  <div class="episode-grid">
 
-    <a class="episode"
-       href="https://www.youtube.com/watch?v=vSd02mtWG8w"
-       target="_blank">
+    <!-- EPISODE 1 -->
 
-      <span class="episode-number">01</span>
-      <span class="episode-title">Gary's Cousin Conundrum</span>
-      <span class="watch">Watch ↗</span>
+    <article class="episode-card">
 
-    </a>
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=vSd02mtWG8w"
+         target="_blank">
 
-    <a class="episode"
-       href="https://www.youtube.com/watch?v=gPypqTVi9vM"
-       target="_blank">
+        <img
+          src="https://img.youtube.com/vi/vSd02mtWG8w/hqdefault.jpg"
+          alt="Gary's Cousin Conundrum">
 
-      <span class="episode-number">02</span>
-      <span class="episode-title">All Dressed Up</span>
-      <span class="watch">Watch ↗</span>
+        <span class="play">▶</span>
 
-    </a>
+      </a>
 
-    <a class="episode"
-       href="https://www.youtube.com/watch?v=9Irpm2Ehdb0"
-       target="_blank">
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Gary's Cousin Conundrum
+        </h3>
+        <span class="episode-number">01</span>
+      </div>
 
-      <span class="episode-number">03</span>
-      <span class="episode-title">Gary &amp; The Cupcake Culprit</span>
-      <span class="watch">Watch ↗</span>
+      <div class="episode-role">Writer</div>
 
-    </a>
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
 
-    <a class="episode"
-       href="https://www.youtube.com/watch?v=v02jyzMciOM"
-       target="_blank">
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
 
-      <span class="episode-number">04</span>
-      <span class="episode-title">Gary's Toy Trouble</span>
-      <span class="watch">Watch ↗</span>
+    </article>
 
-    </a>
+
+    <!-- EPISODE 2 -->
+
+    <article class="episode-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=gPypqTVi9vM"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/gPypqTVi9vM/hqdefault.jpg"
+          alt="All Dressed Up">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          All Dressed Up
+        </h3>
+        <span class="episode-number">02</span>
+      </div>
+
+      <div class="episode-role">Writer</div>
+
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
+
+
+    <!-- EPISODE 3 -->
+
+    <article class="episode-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=9Irpm2Ehdb0"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/9Irpm2Ehdb0/hqdefault.jpg"
+          alt="Gary & The Cupcake Culprit">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Gary &amp; The Cupcake Culprit
+        </h3>
+        <span class="episode-number">03</span>
+      </div>
+
+      <div class="episode-role">Writer</div>
+
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
+
+
+    <!-- EPISODE 4 -->
+
+    <article class="episode-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=v02jyzMciOM"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/v02jyzMciOM/hqdefault.jpg"
+          alt="Gary's Toy Trouble">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Gary's Toy Trouble
+        </h3>
+        <span class="episode-number">04</span>
+      </div>
+
+      <div class="episode-role">Writer</div>
+
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
 
   </div>
 
@@ -489,7 +725,7 @@ footer {
 
 <!-- KINGDOM FORCE -->
 
-<section class="show dark">
+<section class="show">
 
 <div class="wrap">
 
@@ -499,50 +735,140 @@ footer {
       Writer · 3 Selected Episodes
     </div>
 
-    <div class="show-title">
+    <div class="show-info">
+
       <h2>Kingdom Force</h2>
-      <p>Animated Television Series</p>
+
+      <div class="show-type">
+        Animated Television Series
+      </div>
+
+      <div class="show-logline">
+        Series logline coming soon.
+      </div>
+
     </div>
 
   </div>
 
-  <div class="show-image">
-    <img
-      src="https://img.youtube.com/vi/k9kxaqUkvyQ/hqdefault.jpg"
-      alt="Kingdom Force">
-  </div>
 
-  <div class="episodes">
+  <div class="episode-grid">
 
-    <a class="episode"
-       href="https://www.youtube.com/watch?v=k9kxaqUkvyQ"
-       target="_blank">
+    <!-- EPISODE 1 -->
 
-      <span class="episode-number">01</span>
-      <span class="episode-title">Moustivus</span>
-      <span class="watch">Watch ↗</span>
+    <article class="episode-card">
 
-    </a>
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=k9kxaqUkvyQ"
+         target="_blank">
 
-    <a class="episode"
-       href="https://www.youtube.com/watch?v=DrPb_q3P_PE"
-       target="_blank">
+        <img
+          src="https://img.youtube.com/vi/k9kxaqUkvyQ/hqdefault.jpg"
+          alt="Moustivus">
 
-      <span class="episode-number">02</span>
-      <span class="episode-title">Ready, Set, Slow!</span>
-      <span class="watch">Watch ↗</span>
+        <span class="play">▶</span>
 
-    </a>
+      </a>
 
-    <a class="episode"
-       href="https://www.youtube.com/watch?v=XwOS-kmlSjI"
-       target="_blank">
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Moustivus
+        </h3>
+        <span class="episode-number">01</span>
+      </div>
 
-      <span class="episode-number">03</span>
-      <span class="episode-title">Cold Comfort</span>
-      <span class="watch">Watch ↗</span>
+      <div class="episode-role">Writer</div>
 
-    </a>
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
+
+
+    <!-- EPISODE 2 -->
+
+    <article class="episode-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=DrPb_q3P_PE"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/DrPb_q3P_PE/hqdefault.jpg"
+          alt="Ready, Set, Slow!">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Ready, Set, Slow!
+        </h3>
+        <span class="episode-number">02</span>
+      </div>
+
+      <div class="episode-role">Writer</div>
+
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
+
+
+    <!-- EPISODE 3 -->
+
+    <article class="episode-card">
+
+      <a class="thumbnail"
+         href="https://www.youtube.com/watch?v=XwOS-kmlSjI"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/XwOS-kmlSjI/hqdefault.jpg"
+          alt="Cold Comfort">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <div class="episode-topline">
+        <h3 class="episode-title">
+          Cold Comfort
+        </h3>
+        <span class="episode-number">03</span>
+      </div>
+
+      <div class="episode-role">Writer</div>
+
+      <p class="episode-description">
+        Episode description coming soon.
+      </p>
+
+      <details>
+        <summary>Writer's Note</summary>
+        <div class="writer-note">
+          Behind-the-story notes coming soon.
+        </div>
+      </details>
+
+    </article>
 
   </div>
 
@@ -551,7 +877,7 @@ footer {
 </section>
 
 
-<!-- NEXT CATEGORY -->
+<!-- NEXT -->
 
 <section class="next">
 
