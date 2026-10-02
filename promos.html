@@ -114,7 +114,7 @@ h1 {
   letter-spacing: .15px;
 }
 
-/* CATEGORY SECTIONS */
+/* CATEGORY */
 
 .category {
   padding: 100px 5% 115px;
@@ -160,7 +160,7 @@ h1 {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 48px 24px;
+  gap: 55px 28px;
 }
 
 .project-card {
@@ -222,31 +222,44 @@ h1 {
   color: #777;
 }
 
-/* NEXT */
+/* PREVIOUS / NEXT */
 
-.next {
+.page-nav {
   background: #101010;
   color: #fff;
-  padding: 100px 5%;
+  padding: 95px 5% 100px;
 }
 
-.next-label {
+.page-nav-inner {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.page-nav-item:last-child {
+  text-align: right;
+}
+
+.page-nav-label {
+  display: block;
   color: #777;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.next a {
+.page-nav-title {
   display: inline-block;
-  font-size: clamp(40px, 6vw, 75px);
+  font-size: clamp(34px, 4.5vw, 62px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.02;
   letter-spacing: -1.5px;
 }
 
-.next a:hover {
+.page-nav-item a:hover {
   opacity: .55;
 }
 
@@ -296,8 +309,17 @@ footer {
     gap: 45px;
   }
 
-  .next {
-    padding: 75px 20px;
+  .page-nav {
+    padding: 70px 20px;
+  }
+
+  .page-nav-inner {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .page-nav-item:last-child {
+    text-align: left;
   }
 
 }
@@ -390,17 +412,14 @@ footer {
          href="https://youtu.be/Rz2F_SgHawU"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/Rz2F_SgHawU/hqdefault.jpg"
-          alt="Mr. Hugo's Little Library">
+        <img src="https://img.youtube.com/vi/Rz2F_SgHawU/hqdefault.jpg"
+             alt="Mr. Hugo's Little Library">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        Mr. Hugo's Little Library
-      </h3>
+      <h3 class="project-title">Mr. Hugo's Little Library</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -415,17 +434,14 @@ footer {
          href="https://youtu.be/2UeCHf_rF2M"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/2UeCHf_rF2M/hqdefault.jpg"
-          alt="Burps, Butts & Bones">
+        <img src="https://img.youtube.com/vi/2UeCHf_rF2M/hqdefault.jpg"
+             alt="Burps, Butts & Bones">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        Burps, Butts &amp; Bones
-      </h3>
+      <h3 class="project-title">Burps, Butts &amp; Bones</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -440,17 +456,80 @@ footer {
          href="https://youtu.be/3-OrPu03WDE"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/3-OrPu03WDE/hqdefault.jpg"
-          alt="Odd Squad UK">
+        <img src="https://img.youtube.com/vi/3-OrPu03WDE/hqdefault.jpg"
+             alt="Odd Squad UK">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        Odd Squad UK
-      </h3>
+      <h3 class="project-title">Odd Squad UK</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/JKFheGcp2X8"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/JKFheGcp2X8/hqdefault.jpg"
+             alt="Rosie's Rules">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">Rosie's Rules</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/8rb920LY-ac"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/8rb920LY-ac/hqdefault.jpg"
+             alt="Woolly Woolly">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">Woolly Woolly</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/KN98rZfbr9U"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/KN98rZfbr9U/hqdefault.jpg"
+             alt="BooSnoo!">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">BooSnoo!</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -495,17 +574,14 @@ footer {
          href="https://youtu.be/vE0pK6qE4Zk"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/vE0pK6qE4Zk/hqdefault.jpg"
-          alt="The Dating Game">
+        <img src="https://img.youtube.com/vi/vE0pK6qE4Zk/hqdefault.jpg"
+             alt="The Dating Game">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        The Dating Game
-      </h3>
+      <h3 class="project-title">The Dating Game</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -520,17 +596,14 @@ footer {
          href="https://youtu.be/Y94e3xSbpPs"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/Y94e3xSbpPs/hqdefault.jpg"
-          alt="Fanny: The Right To Rock">
+        <img src="https://img.youtube.com/vi/Y94e3xSbpPs/hqdefault.jpg"
+             alt="Fanny: The Right To Rock">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        Fanny: The Right To Rock
-      </h3>
+      <h3 class="project-title">Fanny: The Right To Rock</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -545,17 +618,80 @@ footer {
          href="https://youtu.be/yzdkmQZYLcI"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/yzdkmQZYLcI/hqdefault.jpg"
-          alt="Big If True">
+        <img src="https://img.youtube.com/vi/yzdkmQZYLcI/hqdefault.jpg"
+             alt="Big If True">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        Big [If True]
-      </h3>
+      <h3 class="project-title">Big [If True]</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/_hkfCBUGdW0"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/_hkfCBUGdW0/hqdefault.jpg"
+             alt="The Pitch">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">The Pitch</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/qnrHhiOM-c4"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/qnrHhiOM-c4/hqdefault.jpg"
+             alt="CFNY The Spirit of Radio">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">CFNY: The Spirit of Radio</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/KI3otCN0fqI"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/KI3otCN0fqI/hqdefault.jpg"
+             alt="My Dad's Tapes">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">My Dad's Tapes</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -600,17 +736,14 @@ footer {
          href="https://youtu.be/BpXUBYU27yE"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/BpXUBYU27yE/hqdefault.jpg"
-          alt="Pride Programming 2026">
+        <img src="https://img.youtube.com/vi/BpXUBYU27yE/hqdefault.jpg"
+             alt="Pride Programming 2026">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        Pride Programming 2026
-      </h3>
+      <h3 class="project-title">Pride Programming 2026</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -625,9 +758,8 @@ footer {
          href="https://youtu.be/M2akPmUbofs"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/M2akPmUbofs/hqdefault.jpg"
-          alt="National Indigenous History Month 2026">
+        <img src="https://img.youtube.com/vi/M2akPmUbofs/hqdefault.jpg"
+             alt="National Indigenous History Month 2026">
 
         <span class="play">▶</span>
 
@@ -650,16 +782,81 @@ footer {
          href="https://youtu.be/sxScsBUDpkI"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/sxScsBUDpkI/hqdefault.jpg"
-          alt="TVO Docs Sizzle Reel 2024">
+        <img src="https://img.youtube.com/vi/sxScsBUDpkI/hqdefault.jpg"
+             alt="TVO Docs Sizzle Reel 2024">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">TVO Docs Sizzle Reel 2024</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/CG8lp9ZAtWg"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/CG8lp9ZAtWg/hqdefault.jpg"
+             alt="March Break 2025">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">March Break 2025</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/QvR21_tFXnI"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/QvR21_tFXnI/hqdefault.jpg"
+             alt="TVOkids Holidays 2025">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">TVOkids Holidays 2025</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/3rWiAr6R2Ek"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/3rWiAr6R2Ek/hqdefault.jpg"
+             alt="TVOkids Sizzle Reel Winter 2025">
 
         <span class="play">▶</span>
 
       </a>
 
       <h3 class="project-title">
-        TVO Docs Sizzle Reel 2024
+        TVOkids Sizzle Reel Winter 2025
       </h3>
 
       <div class="project-role">
@@ -705,17 +902,102 @@ footer {
          href="https://youtu.be/pdZGvZt42UI"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/pdZGvZt42UI/hqdefault.jpg"
-          alt="TVO Today App - Music">
+        <img src="https://img.youtube.com/vi/pdZGvZt42UI/hqdefault.jpg"
+             alt="TVO Today App - Music">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        TVO Today App — Music
-      </h3>
+      <h3 class="project-title">TVO Today App — Music</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/d8_sn48jZzw"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/d8_sn48jZzw/hqdefault.jpg"
+             alt="TVO Today App - Food">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">TVO Today App — Food</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/ZpbYAV2dAeI"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/ZpbYAV2dAeI/hqdefault.jpg"
+             alt="TVO Today App - Trains">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">TVO Today App — Trains</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/-jc03jCL3pM"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/-jc03jCL3pM/hqdefault.jpg"
+             alt="TVO Today App - Animals">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">TVO Today App — Animals</h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/LtlkJqRWsfw"
+         target="_blank">
+
+        <img src="https://img.youtube.com/vi/LtlkJqRWsfw/hqdefault.jpg"
+             alt="TVO Today App - Science">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">TVO Today App — Science</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -730,42 +1012,14 @@ footer {
          href="https://youtu.be/d1wnwXH3rso"
          target="_blank">
 
-        <img
-          src="https://img.youtube.com/vi/d1wnwXH3rso/hqdefault.jpg"
-          alt="TVOkids Mobile App">
+        <img src="https://img.youtube.com/vi/d1wnwXH3rso/hqdefault.jpg"
+             alt="TVOkids Mobile App">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">
-        TVOkids Mobile App
-      </h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-
-    <article class="project-card">
-
-      <a class="thumbnail"
-         href="https://youtu.be/cvNjhc2Fu-8"
-         target="_blank">
-
-        <img
-          src="https://img.youtube.com/vi/cvNjhc2Fu-8/hqdefault.jpg"
-          alt="Where To Find Us">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">
-        Where To Find Us
-      </h3>
+      <h3 class="project-title">TVOkids Mobile App</h3>
 
       <div class="project-role">
         Writer · Producer · Editor
@@ -780,22 +1034,48 @@ footer {
 </section>
 
 
-<!-- NEXT -->
+<!-- PREVIOUS / NEXT -->
 
-<section class="next">
+<section class="page-nav">
 
-<div class="wrap">
+  <div class="page-nav-inner">
 
-  <div class="next-label">
-    Next
+    <div class="page-nav-item">
+
+      <a href="short-form.html">
+
+        <span class="page-nav-label">
+          ← Previous
+        </span>
+
+        <span class="page-nav-title">
+          Short-Form +<br>
+          Interstitials
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="page-nav-item">
+
+      <a href="original.html">
+
+        <span class="page-nav-label">
+          Next →
+        </span>
+
+        <span class="page-nav-title">
+          Original +<br>
+          Digital
+        </span>
+
+      </a>
+
+    </div>
+
   </div>
-
-  <a href="original.html">
-    Original +<br>
-    Digital →
-  </a>
-
-</div>
 
 </section>
 
