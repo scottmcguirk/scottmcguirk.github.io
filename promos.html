@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Promos + Campaigns | Scott McGuirk</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f1eb;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: .1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* NAV */
+
+nav {
+  padding: 25px 5%;
+  border-bottom: 1px solid #d4d1ca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: .2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  opacity: .45;
+}
+
+/* HERO */
+
+.hero {
+  padding: 90px 5% 105px;
+  background: #101010;
+  color: #fff;
+}
+
+.back {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  margin-bottom: 65px;
+  color: #aaa;
+}
+
+.back:hover {
+  opacity: .5;
+}
+
+.number {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(58px, 9vw, 130px);
+  line-height: .9;
+  letter-spacing: -2.5px;
+  margin-bottom: 55px;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 70px;
+}
+
+.skills {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.hero-copy {
+  font-size: clamp(21px, 2.3vw, 31px);
+  line-height: 1.35;
+  max-width: 750px;
+  letter-spacing: .15px;
+}
+
+/* CATEGORY SECTIONS */
+
+.category {
+  padding: 100px 5% 115px;
+  border-top: 1px solid #ccc8bf;
+}
+
+.category:first-of-type {
+  border-top: 0;
+}
+
+.category-header {
+  max-width: 800px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.category-meta {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.category-header h2 {
+  font-size: clamp(42px, 5.5vw, 70px);
+  line-height: 1;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.category-description {
+  max-width: 650px;
+  margin: auto;
+  color: #5c5c5c;
+  font-size: 17px;
+  line-height: 1.65;
+  letter-spacing: .15px;
+}
+
+/* PROJECT GRID */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 24px;
+}
+
+.project-card {
+  min-width: 0;
+}
+
+.thumbnail {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #ddd;
+  margin-bottom: 20px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.025);
+}
+
+.play {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 46px;
+  height: 46px;
+  background: #f3f1eb;
+  color: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: transform .2s ease;
+}
+
+.thumbnail:hover .play {
+  transform: scale(1.08);
+}
+
+.project-title {
+  font-size: clamp(20px, 1.7vw, 25px);
+  line-height: 1.18;
+  letter-spacing: 0;
+  margin-bottom: 9px;
+}
+
+.project-role {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777;
+}
+
+/* NEXT */
+
+.next {
+  background: #101010;
+  color: #fff;
+  padding: 100px 5%;
+}
+
+.next-label {
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.next a {
+  display: inline-block;
+  font-size: clamp(40px, 6vw, 75px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.next a:hover {
+  opacity: .55;
+}
+
+footer {
+  background: #101010;
+  color: #666;
+  padding: 25px 5%;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+  nav {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 65px 20px 80px;
+  }
+
+  .back {
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    font-size: clamp(52px, 16vw, 80px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .category {
+    padding: 75px 20px 85px;
+  }
+
+  .category-header {
+    margin-bottom: 40px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .next {
+    padding: 75px 20px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+  <a href="index.html" class="logo">
+    SCOTT McGUIRK
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="index.html#about">About</a>
+    <a href="mailto:scottiemcguirk@gmail.com">Contact</a>
+  </div>
+
+</nav>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="wrap">
+
+  <a class="back" href="index.html#work">
+    ← Selected Work
+  </a>
+
+  <div class="number">03</div>
+
+  <h1>
+    Promos +<br>
+    Campaigns
+  </h1>
+
+  <div class="hero-bottom">
+
+    <div class="skills">
+      Writing · Producing · Editing
+    </div>
+
+    <div class="hero-copy">
+      From preschool comedy to feature documentaries,
+      cultural campaigns and product marketing, I create
+      short-form promotional content across audiences,
+      brands and platforms.
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ENTERTAINMENT -->
+
+<section class="category">
+
+<div class="wrap">
+
+  <div class="category-header">
+
+    <div class="category-meta">
+      TVOkids
+    </div>
+
+    <h2>Entertainment</h2>
+
+    <p class="category-description">
+      High-energy promotional creative built around
+      character, comedy and distinctive show identities.
+    </p>
+
+  </div>
+
+
+  <div class="project-grid">
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/Rz2F_SgHawU"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/Rz2F_SgHawU/hqdefault.jpg"
+          alt="Mr. Hugo's Little Library">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Mr. Hugo's Little Library
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/2UeCHf_rF2M"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/2UeCHf_rF2M/hqdefault.jpg"
+          alt="Burps, Butts & Bones">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Burps, Butts &amp; Bones
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/3-OrPu03WDE"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/3-OrPu03WDE/hqdefault.jpg"
+          alt="Odd Squad UK">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Odd Squad UK
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- DOCUMENTARY + FACTUAL -->
+
+<section class="category">
+
+<div class="wrap">
+
+  <div class="category-header">
+
+    <div class="category-meta">
+      TVO Docs + TVO Today
+    </div>
+
+    <h2>Documentary + Factual</h2>
+
+    <p class="category-description">
+      Promos that distill complex stories, personalities
+      and ideas into concise, audience-focused creative.
+    </p>
+
+  </div>
+
+
+  <div class="project-grid">
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/vE0pK6qE4Zk"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/vE0pK6qE4Zk/hqdefault.jpg"
+          alt="The Dating Game">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        The Dating Game
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/Y94e3xSbpPs"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/Y94e3xSbpPs/hqdefault.jpg"
+          alt="Fanny: The Right To Rock">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Fanny: The Right To Rock
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/yzdkmQZYLcI"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/yzdkmQZYLcI/hqdefault.jpg"
+          alt="Big If True">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Big [If True]
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- CAMPAIGNS + CULTURE -->
+
+<section class="category">
+
+<div class="wrap">
+
+  <div class="category-header">
+
+    <div class="category-meta">
+      Programming + Awareness
+    </div>
+
+    <h2>Campaigns + Culture</h2>
+
+    <p class="category-description">
+      Programming campaigns that bring together multiple
+      titles, voices and ideas around a shared moment.
+    </p>
+
+  </div>
+
+
+  <div class="project-grid">
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/BpXUBYU27yE"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/BpXUBYU27yE/hqdefault.jpg"
+          alt="Pride Programming 2026">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Pride Programming 2026
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/M2akPmUbofs"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/M2akPmUbofs/hqdefault.jpg"
+          alt="National Indigenous History Month 2026">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        National Indigenous History Month 2026
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/sxScsBUDpkI"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/sxScsBUDpkI/hqdefault.jpg"
+          alt="TVO Docs Sizzle Reel 2024">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        TVO Docs Sizzle Reel 2024
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- BRAND + PRODUCT -->
+
+<section class="category">
+
+<div class="wrap">
+
+  <div class="category-header">
+
+    <div class="category-meta">
+      Brand + Platform
+    </div>
+
+    <h2>Brand + Product</h2>
+
+    <p class="category-description">
+      Campaign creative designed to communicate products,
+      platforms and brand experiences quickly and clearly.
+    </p>
+
+  </div>
+
+
+  <div class="project-grid">
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/pdZGvZt42UI"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/pdZGvZt42UI/hqdefault.jpg"
+          alt="TVO Today App - Music">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        TVO Today App — Music
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/d1wnwXH3rso"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/d1wnwXH3rso/hqdefault.jpg"
+          alt="TVOkids Mobile App">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        TVOkids Mobile App
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+
+    <article class="project-card">
+
+      <a class="thumbnail"
+         href="https://youtu.be/cvNjhc2Fu-8"
+         target="_blank">
+
+        <img
+          src="https://img.youtube.com/vi/cvNjhc2Fu-8/hqdefault.jpg"
+          alt="Where To Find Us">
+
+        <span class="play">▶</span>
+
+      </a>
+
+      <h3 class="project-title">
+        Where To Find Us
+      </h3>
+
+      <div class="project-role">
+        Writer · Producer · Editor
+      </div>
+
+    </article>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- NEXT -->
+
+<section class="next">
+
+<div class="wrap">
+
+  <div class="next-label">
+    Next
+  </div>
+
+  <a href="original.html">
+    Original +<br>
+    Digital →
+  </a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+  © 2026 Scott McGuirk
+</footer>
+
+</body>
+</html>
