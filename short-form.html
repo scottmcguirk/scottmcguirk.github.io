@@ -68,17 +68,29 @@ nav {
   color: #fff;
 }
 
-.back {
-  display: inline-block;
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 65px;
+}
+
+.hero-nav a {
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1.8px;
-  margin-bottom: 65px;
   color: #aaa;
+  transition: opacity .2s ease;
 }
 
-.back:hover {
+.hero-nav a:last-child {
+  text-align: right;
+}
+
+.hero-nav a:hover {
   opacity: .5;
+}
 }
 
 .number {
@@ -369,6 +381,16 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
+  .hero-nav {
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.hero-nav a {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  max-width: 46%;
+}
 
 }
 </style>
@@ -398,9 +420,17 @@ footer {
 
 <div class="wrap">
 
-  <a class="back" href="index.html#work">
-    ← Selected Work
+<div class="hero-nav">
+
+  <a href="scripted.html">
+    ← Scripted
   </a>
+
+  <a href="promos.html">
+    Promos + Campaigns →
+  </a>
+
+</div>
 
   <div class="number">02</div>
 
