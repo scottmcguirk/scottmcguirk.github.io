@@ -14,13 +14,16 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f3f1eb;
   color: #111;
   line-height: 1.5;
+  letter-spacing: .1px;
 }
 
 a {
@@ -32,6 +35,7 @@ a {
   max-width: 1300px;
   margin: auto;
 }
+
 
 /* NAV */
 
@@ -46,6 +50,7 @@ nav {
 .logo {
   font-weight: 700;
   font-size: 18px;
+  letter-spacing: .2px;
 }
 
 .nav-links {
@@ -57,6 +62,7 @@ nav {
 .nav-links a:hover {
   opacity: .45;
 }
+
 
 /* HERO */
 
@@ -70,7 +76,7 @@ nav {
   display: inline-block;
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   margin-bottom: 65px;
   color: #aaa;
 }
@@ -87,10 +93,10 @@ nav {
 }
 
 h1 {
-  font-size: clamp(75px, 12vw, 155px);
-  line-height: .82;
-  letter-spacing: -7px;
-  margin-bottom: 50px;
+  font-size: clamp(58px, 9vw, 130px);
+  line-height: .9;
+  letter-spacing: -2.5px;
+  margin-bottom: 55px;
 }
 
 .hero-bottom {
@@ -107,57 +113,50 @@ h1 {
 
 .hero-copy {
   font-size: clamp(21px, 2.3vw, 31px);
-  line-height: 1.3;
+  line-height: 1.35;
   max-width: 750px;
+  letter-spacing: .15px;
 }
 
-/* SHOW */
 
-.show {
-  padding: 95px 5% 115px;
+/* SERIES */
+
+.series {
+  padding: 100px 5% 115px;
   border-top: 1px solid #ccc8bf;
 }
 
-.show-header {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 60px;
-  margin-bottom: 50px;
+.series:first-of-type {
+  border-top: 0;
 }
 
-.show-meta {
+.series-header {
+  max-width: 800px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.series-header h2 {
+  font-size: clamp(42px, 5.5vw, 70px);
+  line-height: 1;
+  letter-spacing: -1.5px;
+  margin-bottom: 18px;
+}
+
+.series-meta {
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   color: #777;
-  padding-top: 8px;
+  line-height: 1.9;
 }
 
-.show-info h2 {
-  font-size: clamp(42px, 5.5vw, 72px);
-  line-height: .95;
-  letter-spacing: -3px;
-  margin-bottom: 12px;
-}
-
-.show-type {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 22px;
-}
-
-.show-logline {
-  max-width: 720px;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-}
 
 /* EPISODE GRID */
 
 .episode-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 55px 28px;
 }
 
@@ -188,17 +187,17 @@ h1 {
 
 .play {
   position: absolute;
-  right: 18px;
-  bottom: 18px;
-  width: 48px;
-  height: 48px;
+  right: 16px;
+  bottom: 16px;
+  width: 46px;
+  height: 46px;
   background: #f3f1eb;
   color: #111;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 15px;
   transition: transform .2s ease;
 }
 
@@ -206,60 +205,45 @@ h1 {
   transform: scale(1.08);
 }
 
-.episode-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: flex-start;
-  margin-bottom: 9px;
-}
-
 .episode-title {
-  font-size: clamp(21px, 2vw, 28px);
-  line-height: 1.1;
-  letter-spacing: -.7px;
-}
-
-.episode-number {
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: #888;
-  white-space: nowrap;
-  padding-top: 5px;
+  font-size: clamp(20px, 1.7vw, 25px);
+  line-height: 1.18;
+  letter-spacing: 0;
+  margin-bottom: 9px;
 }
 
 .episode-role {
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.5px;
   color: #777;
-  margin-bottom: 13px;
+  margin-bottom: 18px;
 }
 
 .episode-description {
-  color: #555;
   font-size: 15px;
-  line-height: 1.6;
-  max-width: 580px;
+  line-height: 1.65;
+  color: #555;
+  margin-bottom: 18px;
 }
 
-/* WRITER NOTE - ready for later */
+
+/* WRITER'S NOTE */
 
 details {
-  margin-top: 18px;
-  border-top: 1px solid #d0ccc4;
-  border-bottom: 1px solid #d0ccc4;
+  border-top: 1px solid #cbc7bf;
+  padding-top: 14px;
 }
 
 summary {
   list-style: none;
   cursor: pointer;
-  padding: 14px 0;
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 summary::-webkit-details-marker {
@@ -268,8 +252,8 @@ summary::-webkit-details-marker {
 
 summary::after {
   content: "+";
-  font-size: 16px;
-  line-height: 10px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 details[open] summary::after {
@@ -277,48 +261,13 @@ details[open] summary::after {
 }
 
 .writer-note {
-  padding: 0 0 18px;
   color: #555;
   font-size: 14px;
   line-height: 1.65;
+  padding-top: 15px;
 }
 
-/* NEXT */
 
-.next {
-  background: #101010;
-  color: white;
-  padding: 100px 5%;
-}
-
-.next-label {
-  color: #777;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
-.next a {
-  display: inline-block;
-  font-size: clamp(40px, 6vw, 75px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -3px;
-}
-
-.next a:hover {
-  opacity: .55;
-}
-
-footer {
-  background: #101010;
-  color: #666;
-  padding: 25px 5%;
-  font-size: 12px;
-}
-
-/* MOBILE */
 /* PREVIOUS / NEXT */
 
 .page-nav {
@@ -359,6 +308,18 @@ footer {
 .page-nav-item a:hover {
   opacity: .55;
 }
+
+
+footer {
+  background: #101010;
+  color: #666;
+  padding: 25px 5%;
+  font-size: 12px;
+}
+
+
+/* MOBILE */
+
 @media(max-width: 750px) {
 
   nav {
@@ -374,29 +335,41 @@ footer {
   }
 
   h1 {
-    letter-spacing: -4px;
+    font-size: clamp(52px, 16vw, 80px);
+    letter-spacing: -1.5px;
   }
 
-  .hero-bottom,
-  .show-header {
+  .hero-bottom {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 25px;
   }
 
-  .show {
-    padding: 70px 20px 85px;
+  .series {
+    padding: 75px 20px 85px;
   }
 
-  .episode-grid {
+  .series-header {
+    margin-bottom: 40px;
+  }
+
+  .page-nav {
+    padding: 70px 20px;
+  }
+
+  .page-nav-inner {
     grid-template-columns: 1fr;
     gap: 55px;
   }
 
-  .next {
-    padding: 75px 20px;
+  .page-nav-item:last-child {
+    text-align: left;
   }
 
 }
+
+
+/* PHONE-SIZE EPISODE GRID */
+
 @media(max-width: 500px) {
 
   .episode-grid {
@@ -406,19 +379,9 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-.page-nav {
-  padding: 70px 20px;
+
 }
 
-.page-nav-inner {
-  grid-template-columns: 1fr;
-  gap: 55px;
-}
-
-.page-nav-item:last-child {
-  text-align: left;
-}
-}
 </style>
 </head>
 
@@ -442,6 +405,7 @@ footer {
 
 <main>
 
+
 <!-- HERO -->
 
 <section class="hero">
@@ -454,7 +418,9 @@ footer {
 
   <div class="number">01</div>
 
-  <h1>Scripted</h1>
+  <h1>
+    Scripted
+  </h1>
 
   <div class="hero-bottom">
 
@@ -463,8 +429,9 @@ footer {
     </div>
 
     <div class="hero-copy">
-      Selected television writing credits across animated
-      comedy and children's entertainment.
+      Scripted television writing built around character,
+      comedy and story — from preschool adventures to
+      ensemble-driven animated series.
     </div>
 
   </div>
@@ -476,28 +443,17 @@ footer {
 
 <!-- DINO RANCH -->
 
-<section class="show">
+<section class="series">
 
 <div class="wrap">
 
-  <div class="show-header">
+  <div class="series-header">
 
-    <div class="show-meta">
-      Writer · 2 Selected Episodes
-    </div>
+    <h2>Dino Ranch</h2>
 
-    <div class="show-info">
-
-      <h2>Dino Ranch</h2>
-
-      <div class="show-type">
-        Animated Television Series
-      </div>
-
-      <div class="show-logline">
-        Series logline coming soon.
-      </div>
-
+    <div class="series-meta">
+      Animated Television Series<br>
+      Writer · 2 Episodes
     </div>
 
   </div>
@@ -505,7 +461,6 @@ footer {
 
   <div class="episode-grid">
 
-    <!-- EPISODE 1 -->
 
     <article class="episode-card">
 
@@ -521,12 +476,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Jane's Perfect Present
-        </h3>
-        <span class="episode-number">01</span>
-      </div>
+      <h3 class="episode-title">
+        Jane's Perfect Present
+      </h3>
 
       <div class="episode-role">
         Writer
@@ -537,16 +489,17 @@ footer {
       </p>
 
       <details>
+
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
+
       </details>
 
     </article>
 
-
-    <!-- EPISODE 2 -->
 
     <article class="episode-card">
 
@@ -562,12 +515,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Tango's BFF
-        </h3>
-        <span class="episode-number">02</span>
-      </div>
+      <h3 class="episode-title">
+        Tango's BFF
+      </h3>
 
       <div class="episode-role">
         Writer
@@ -578,13 +528,17 @@ footer {
       </p>
 
       <details>
+
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
+
       </details>
 
     </article>
+
 
   </div>
 
@@ -595,28 +549,17 @@ footer {
 
 <!-- GARY'S MAGIC FORT -->
 
-<section class="show">
+<section class="series">
 
 <div class="wrap">
 
-  <div class="show-header">
+  <div class="series-header">
 
-    <div class="show-meta">
-      Writer · 4 Selected Episodes
-    </div>
+    <h2>Gary's Magic Fort</h2>
 
-    <div class="show-info">
-
-      <h2>Gary's Magic Fort</h2>
-
-      <div class="show-type">
-        Children's Television Series
-      </div>
-
-      <div class="show-logline">
-        Series logline coming soon.
-      </div>
-
+    <div class="series-meta">
+      Children's Television Series<br>
+      Writer · 4 Episodes
     </div>
 
   </div>
@@ -624,7 +567,6 @@ footer {
 
   <div class="episode-grid">
 
-    <!-- EPISODE 1 -->
 
     <article class="episode-card">
 
@@ -640,12 +582,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Gary's Cousin Conundrum
-        </h3>
-        <span class="episode-number">01</span>
-      </div>
+      <h3 class="episode-title">
+        Gary's Cousin Conundrum
+      </h3>
 
       <div class="episode-role">Writer</div>
 
@@ -655,15 +594,13 @@ footer {
 
       <details>
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
       </details>
 
     </article>
 
-
-    <!-- EPISODE 2 -->
 
     <article class="episode-card">
 
@@ -679,12 +616,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          All Dressed Up
-        </h3>
-        <span class="episode-number">02</span>
-      </div>
+      <h3 class="episode-title">
+        All Dressed Up
+      </h3>
 
       <div class="episode-role">Writer</div>
 
@@ -694,15 +628,13 @@ footer {
 
       <details>
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
       </details>
 
     </article>
 
-
-    <!-- EPISODE 3 -->
 
     <article class="episode-card">
 
@@ -718,12 +650,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Gary &amp; The Cupcake Culprit
-        </h3>
-        <span class="episode-number">03</span>
-      </div>
+      <h3 class="episode-title">
+        Gary &amp; The Cupcake Culprit
+      </h3>
 
       <div class="episode-role">Writer</div>
 
@@ -733,15 +662,13 @@ footer {
 
       <details>
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
       </details>
 
     </article>
 
-
-    <!-- EPISODE 4 -->
 
     <article class="episode-card">
 
@@ -757,12 +684,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Gary's Toy Trouble
-        </h3>
-        <span class="episode-number">04</span>
-      </div>
+      <h3 class="episode-title">
+        Gary's Toy Trouble
+      </h3>
 
       <div class="episode-role">Writer</div>
 
@@ -772,12 +696,13 @@ footer {
 
       <details>
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
       </details>
 
     </article>
+
 
   </div>
 
@@ -788,28 +713,17 @@ footer {
 
 <!-- KINGDOM FORCE -->
 
-<section class="show">
+<section class="series">
 
 <div class="wrap">
 
-  <div class="show-header">
+  <div class="series-header">
 
-    <div class="show-meta">
-      Writer · 3 Selected Episodes
-    </div>
+    <h2>Kingdom Force</h2>
 
-    <div class="show-info">
-
-      <h2>Kingdom Force</h2>
-
-      <div class="show-type">
-        Animated Television Series
-      </div>
-
-      <div class="show-logline">
-        Series logline coming soon.
-      </div>
-
+    <div class="series-meta">
+      Animated Television Series<br>
+      Writer · 3 Episodes
     </div>
 
   </div>
@@ -817,7 +731,6 @@ footer {
 
   <div class="episode-grid">
 
-    <!-- EPISODE 1 -->
 
     <article class="episode-card">
 
@@ -833,12 +746,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Moustivus
-        </h3>
-        <span class="episode-number">01</span>
-      </div>
+      <h3 class="episode-title">
+        Moustivus
+      </h3>
 
       <div class="episode-role">Writer</div>
 
@@ -848,15 +758,13 @@ footer {
 
       <details>
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
       </details>
 
     </article>
 
-
-    <!-- EPISODE 2 -->
 
     <article class="episode-card">
 
@@ -872,12 +780,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Ready, Set, Slow!
-        </h3>
-        <span class="episode-number">02</span>
-      </div>
+      <h3 class="episode-title">
+        Ready, Set, Slow!
+      </h3>
 
       <div class="episode-role">Writer</div>
 
@@ -887,15 +792,13 @@ footer {
 
       <details>
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
       </details>
 
     </article>
 
-
-    <!-- EPISODE 3 -->
 
     <article class="episode-card">
 
@@ -911,12 +814,9 @@ footer {
 
       </a>
 
-      <div class="episode-topline">
-        <h3 class="episode-title">
-          Cold Comfort
-        </h3>
-        <span class="episode-number">03</span>
-      </div>
+      <h3 class="episode-title">
+        Cold Comfort
+      </h3>
 
       <div class="episode-role">Writer</div>
 
@@ -926,18 +826,21 @@ footer {
 
       <details>
         <summary>Writer's Note</summary>
-        <div class="writer-note">
-          Behind-the-story notes coming soon.
-        </div>
+        <p class="writer-note">
+          Creative notes and story inspiration coming soon.
+        </p>
       </details>
 
     </article>
+
 
   </div>
 
 </div>
 
 </section>
+
+
 <!-- PREVIOUS / NEXT -->
 
 <section class="page-nav">
@@ -981,6 +884,7 @@ footer {
   </div>
 
 </section>
+
 </main>
 
 
