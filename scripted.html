@@ -319,7 +319,46 @@ footer {
 }
 
 /* MOBILE */
+/* PREVIOUS / NEXT */
 
+.page-nav {
+  background: #101010;
+  color: #fff;
+  padding: 95px 5% 100px;
+}
+
+.page-nav-inner {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.page-nav-item:last-child {
+  text-align: right;
+}
+
+.page-nav-label {
+  display: block;
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.page-nav-title {
+  display: inline-block;
+  font-size: clamp(34px, 4.5vw, 62px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+}
+
+.page-nav-item a:hover {
+  opacity: .55;
+}
 @media(max-width: 750px) {
 
   nav {
@@ -358,7 +397,28 @@ footer {
   }
 
 }
+@media(max-width: 500px) {
 
+  .episode-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.page-nav {
+  padding: 70px 20px;
+}
+
+.page-nav-inner {
+  grid-template-columns: 1fr;
+  gap: 55px;
+}
+
+.page-nav-item:last-child {
+  text-align: left;
+}
+}
 </style>
 </head>
 
@@ -878,27 +938,49 @@ footer {
 </div>
 
 </section>
+<!-- PREVIOUS / NEXT -->
+
+<section class="page-nav">
+
+  <div class="page-nav-inner">
+
+    <div class="page-nav-item">
+
+      <a href="index.html#work">
+
+        <span class="page-nav-label">
+          ← Previous
+        </span>
+
+        <span class="page-nav-title">
+          Selected Work
+        </span>
+
+      </a>
+
+    </div>
 
 
-<!-- NEXT -->
+    <div class="page-nav-item">
 
-<section class="next">
+      <a href="short-form.html">
 
-<div class="wrap">
+        <span class="page-nav-label">
+          Next →
+        </span>
 
-  <div class="next-label">
-    Next
+        <span class="page-nav-title">
+          Short-Form +<br>
+          Interstitials
+        </span>
+
+      </a>
+
+    </div>
+
   </div>
 
-  <a href="short-form.html">
-    Short-Form +<br>
-    Interstitials →
-  </a>
-
-</div>
-
 </section>
-
 </main>
 
 
