@@ -264,7 +264,46 @@ footer {
   padding: 25px 5%;
   font-size: 12px;
 }
+/* PREVIOUS / NEXT */
 
+.page-nav {
+  background: #101010;
+  color: #fff;
+  padding: 95px 5% 100px;
+}
+
+.page-nav-inner {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.page-nav-item:last-child {
+  text-align: right;
+}
+
+.page-nav-label {
+  display: block;
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.page-nav-title {
+  display: inline-block;
+  font-size: clamp(34px, 4.5vw, 62px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+}
+
+.page-nav-item a:hover {
+  opacity: .55;
+}
 /* MOBILE */
 
 @media(max-width: 750px) {
@@ -299,11 +338,6 @@ footer {
     margin-bottom: 40px;
   }
 
-.project-grid {rhymes
-    grid-template-columns: 1fr;
-    gap: 45px;
-  }
-
   .rock-feature {
     margin-bottom: 45px;
   }
@@ -312,8 +346,31 @@ footer {
     padding: 75px 20px;
   }
 
+  .page-nav {
+  padding: 70px 20px;
 }
 
+.page-nav-inner {
+  grid-template-columns: 1fr;
+  gap: 55px;
+}
+
+.page-nav-item:last-child {
+  text-align: left;
+}
+
+}
+@media(max-width: 500px) {
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
 </style>
 </head>
 
@@ -820,22 +877,47 @@ footer {
 </section>
 
 
-<!-- NEXT -->
+<!-- PREVIOUS / NEXT -->
 
-<section class="next">
+<section class="page-nav">
 
-<div class="wrap">
+  <div class="page-nav-inner">
 
-  <div class="next-label">
-    Next
+    <div class="page-nav-item">
+
+      <a href="scripted.html">
+
+        <span class="page-nav-label">
+          ← Previous
+        </span>
+
+        <span class="page-nav-title">
+          Scripted
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <div class="page-nav-item">
+
+      <a href="promos.html">
+
+        <span class="page-nav-label">
+          Next →
+        </span>
+
+        <span class="page-nav-title">
+          Promos +<br>
+          Campaigns
+        </span>
+
+      </a>
+
+    </div>
+
   </div>
-
-  <a href="promos.html">
-    Promos +<br>
-    Campaigns →
-  </a>
-
-</div>
 
 </section>
 
