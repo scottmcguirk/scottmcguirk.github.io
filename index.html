@@ -199,7 +199,7 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+grid-template-columns: .7fr 1.3fr;
   gap: 25px;
 }
 
@@ -238,9 +238,32 @@ h1 {
 
 .about {
   padding: 130px 5%;
+}
+
+.about .label {
+  max-width: 1400px;
+  margin: 0 auto 50px;
+}
+
+.about-content {
+  max-width: 1400px;
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(280px, .8fr) 1.6fr;
   gap: 80px;
+  align-items: center;
+}
+
+.about-photo {
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .label {
@@ -376,11 +399,22 @@ footer {
     padding: 25px;
   }
 
-  .about {
-    padding: 90px 20px;
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
+.about {
+  padding: 90px 20px;
+}
+
+.about .label {
+  margin-bottom: 35px;
+}
+
+.about-content {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.about-photo {
+  max-width: 430px;
+}
 
   .experience {
     padding: 0 20px 80px;
@@ -652,19 +686,29 @@ footer {
     About
   </div>
 
-  <div>
+  <div class="about-content">
 
-    <div class="about-main">
-      I'm a Toronto-based writer, producer and digital creator
-      working across television, scripted entertainment,
-      short-form content and digital media.
+    <div class="about-photo">
+      <img
+        src="Scott Milo.jpeg"
+        alt="Scott McGuirk">
     </div>
 
-    <div class="about-small">
-      My work spans writing, producing, directing, shooting and
-      editing — from scripted television and children's entertainment
-      to documentary promotion, digital campaigns and independently
-      created content.
+    <div class="about-copy">
+
+      <div class="about-main">
+        Toronto-based storyteller who creates entertaining content
+        spanning genres and formats, with a focus on kids &amp; family.
+      </div>
+
+      <div class="about-small">
+        I've worked across television and digital media, with experience
+        spanning the full production lifecycle, including scripted writing,
+        producing, directing, shooting, video editing and content strategy.
+        I bring a writer's eye to production and a producer's perspective
+        to the page.
+      </div>
+
     </div>
 
   </div>
@@ -678,26 +722,24 @@ footer {
 
   <h2>Selected Experience</h2>
 
-  <div class="credit">
-    <strong>TVO / TVOkids</strong>
-    <span>Digital Media Producer</span>
-  </div>
+<div class="credit">
+  <strong>TVO / TVOkids</strong>
+  <span>Digital Media Producer · Video Editor</span>
+</div>
 
-  <div class="credit">
-    <strong>CBC Kids</strong>
-    <span>Producer</span>
-  </div>
+<div class="credit">
+  <strong>CBC Kids</strong>
+  <span>Producer · Writer</span>
+</div>
 
-  <div class="credit">
-    <strong>Scripted Television</strong>
-    <span>Writer · Story Consultant</span>
-  </div>
+<div class="credit">
+  <strong>Industrial Brothers</strong>
+  <span>Writer · Coordinator · Project Manager</span>
+</div>
 
-  <div class="credit">
-    <strong>Digital Media</strong>
-    <span>Creator · Producer · Editor</span>
-  </div>
-
+<div class="credit">
+  <strong>Independent</strong>
+  <span>Freelance Writer · Content Creator</span>
 </div>
 
 </section>
