@@ -233,7 +233,47 @@ h1 {
   letter-spacing: 1.5px;
   color: #777;
 }
+.category-role {
+  margin-top: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: #777;
+}
 
+.more-projects {
+  display: none;
+  grid-column: 1 / -1;
+}
+
+.more-projects.open {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 28px;
+}
+
+.view-more-wrap {
+  text-align: center;
+  margin-top: 55px;
+}
+
+.view-more-button {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #111;
+  padding: 0 0 6px;
+  font-family: inherit;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #111;
+  cursor: pointer;
+  transition: opacity .2s ease;
+}
+
+.view-more-button:hover {
+  opacity: .5;
+}
 /* PREVIOUS / NEXT */
 
 .page-nav {
@@ -349,7 +389,10 @@ footer {
     margin-left: auto;
     margin-right: auto;
   }
-
+.more-projects.open {
+  grid-template-columns: 1fr;
+  gap: 45px;
+}
 }
 
 </style>
@@ -418,7 +461,7 @@ footer {
 </section>
 
 
-<!-- ENTERTAINMENT -->
+<!-- KIDS & FAMILY -->
 
 <section class="category">
 
@@ -426,43 +469,48 @@ footer {
 
   <div class="category-header">
 
-    <div class="category-meta">
-      TVOkids
-    </div>
-
-    <h2>Entertainment</h2>
+    <h2>Kids &amp; Family</h2>
 
     <p class="category-description">
-      High-energy promotional creative built around
-      character, comedy and distinctive show identities.
+      Promotional storytelling for kids and family programming across series launches, new seasons, specials and campaigns.
     </p>
+
+    <div class="category-role">
+      Video Editor · Writer · Producer
+    </div>
 
   </div>
 
 
+  <!-- FEATURED -->
+
   <div class="project-grid">
+
+
+    <!-- MR. HUGO'S LITTLE LIBRARY -->
 
     <article class="project-card">
 
       <a class="thumbnail"
-         href="https://youtu.be/Rz2F_SgHawU"
+         href="https://youtu.be/duxYIk3j_fo"
          target="_blank">
 
-        <img src="https://img.youtube.com/vi/Rz2F_SgHawU/hqdefault.jpg"
-             alt="Mr. Hugo's Little Library">
+        <img
+          src="https://img.youtube.com/vi/duxYIk3j_fo/hqdefault.jpg"
+          alt="Mr. Hugo's Little Library">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">Mr. Hugo's Little Library</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
+      <h3 class="project-title">
+        Mr. Hugo's Little Library
+      </h3>
 
     </article>
 
+
+    <!-- BURPS, BUTTS, & BONES -->
 
     <article class="project-card">
 
@@ -470,272 +518,479 @@ footer {
          href="https://youtu.be/2UeCHf_rF2M"
          target="_blank">
 
-        <img src="https://img.youtube.com/vi/2UeCHf_rF2M/hqdefault.jpg"
-             alt="Burps, Butts & Bones">
+        <img
+          src="https://img.youtube.com/vi/2UeCHf_rF2M/hqdefault.jpg"
+          alt="Burps, Butts, & Bones">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">Burps, Butts &amp; Bones</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
+      <h3 class="project-title">
+        Burps, Butts, &amp; Bones — Part 2
+      </h3>
 
     </article>
 
+
+    <!-- THE SCREEN TEAM -->
 
     <article class="project-card">
 
       <a class="thumbnail"
-         href="https://youtu.be/3-OrPu03WDE"
+         href="https://youtu.be/QpKTcXjui8w"
          target="_blank">
 
-        <img src="https://img.youtube.com/vi/3-OrPu03WDE/hqdefault.jpg"
-             alt="Odd Squad UK">
+        <img
+          src="https://img.youtube.com/vi/QpKTcXjui8w/hqdefault.jpg"
+          alt="The Screen Team">
 
         <span class="play">▶</span>
 
       </a>
 
-      <h3 class="project-title">Odd Squad UK</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
+      <h3 class="project-title">
+        The Screen Team
+      </h3>
 
     </article>
 
 
-    <article class="project-card">
+    <!-- EXPANDED GRID -->
 
-      <a class="thumbnail"
-         href="https://youtu.be/JKFheGcp2X8"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/JKFheGcp2X8/hqdefault.jpg"
-             alt="Rosie's Rules">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">Rosie's Rules</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
+    <div class="more-projects" id="kids-family-more">
 
 
-    <article class="project-card">
+      <!-- ROSIE'S RULES -->
 
-      <a class="thumbnail"
-         href="https://youtu.be/8rb920LY-ac"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/8rb920LY-ac/hqdefault.jpg"
-             alt="Woolly Woolly">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">Woolly Woolly</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/JKFheGcp2X8" target="_blank">
+          <img src="https://img.youtube.com/vi/JKFheGcp2X8/hqdefault.jpg" alt="Rosie's Rules">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Rosie's Rules</h3>
+      </article>
 
 
-    <article class="project-card">
+      <!-- PAW PATROL DINO ISLAND -->
 
-      <a class="thumbnail"
-         href="https://youtu.be/KN98rZfbr9U"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/KN98rZfbr9U/hqdefault.jpg"
-             alt="BooSnoo!">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">BooSnoo!</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-  </div>
-
-</div>
-
-</section>
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/CQMLMyHk4MY" target="_blank">
+          <img src="https://img.youtube.com/vi/CQMLMyHk4MY/hqdefault.jpg" alt="PAW Patrol Dino Island">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">PAW Patrol — Dino Island</h3>
+      </article>
 
 
-<!-- DOCUMENTARY + FACTUAL -->
+      <!-- ODD SQUAD UK S2 -->
 
-<section class="category">
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/eAnAbdrfMvU" target="_blank">
+          <img src="https://img.youtube.com/vi/eAnAbdrfMvU/hqdefault.jpg" alt="Odd Squad UK Season 2">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Odd Squad UK — Season 2</h3>
+      </article>
 
-<div class="wrap">
 
-  <div class="category-header">
+      <!-- BUMPADOO -->
 
-    <div class="category-meta">
-      TVO Docs + TVO Today
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/D34kupcWdig" target="_blank">
+          <img src="https://img.youtube.com/vi/D34kupcWdig/hqdefault.jpg" alt="Bumpadoo!">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Bumpadoo!</h3>
+      </article>
+
+
+      <!-- OLD ENOUGH -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/gEVUt5VQzBQ" target="_blank">
+          <img src="https://img.youtube.com/vi/gEVUt5VQzBQ/hqdefault.jpg" alt="Old Enough Season 3">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Old Enough — Season 3</h3>
+      </article>
+
+
+      <!-- ISADORA MOON -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/Z3BX0yrmCVc" target="_blank">
+          <img src="https://img.youtube.com/vi/Z3BX0yrmCVc/hqdefault.jpg" alt="Isadora Moon">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Isadora Moon</h3>
+      </article>
+
+
+      <!-- HIGH HOOPS -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/ut0VhsoSgwU" target="_blank">
+          <img src="https://img.youtube.com/vi/ut0VhsoSgwU/hqdefault.jpg" alt="High Hoops">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">High Hoops</h3>
+      </article>
+
+
+      <!-- NIKHIL & JAY -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/Sr4uwnYjox0" target="_blank">
+          <img src="https://img.youtube.com/vi/Sr4uwnYjox0/hqdefault.jpg" alt="Nikhil & Jay">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Nikhil &amp; Jay</h3>
+      </article>
+
+
+      <!-- DINO DEX -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/jlVEVmUWkKY" target="_blank">
+          <img src="https://img.youtube.com/vi/jlVEVmUWkKY/hqdefault.jpg" alt="Dino Dex">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Dino Dex</h3>
+      </article>
+
+
+      <!-- CARL THE COLLECTOR -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/8ucmdh9bkGw" target="_blank">
+          <img src="https://img.youtube.com/vi/8ucmdh9bkGw/hqdefault.jpg" alt="Carl the Collector">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Carl the Collector</h3>
+      </article>
+
+
+      <!-- KANGAROO BEACH -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/riJiUnbRFWI" target="_blank">
+          <img src="https://img.youtube.com/vi/riJiUnbRFWI/hqdefault.jpg" alt="Kangaroo Beach Season 3">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Kangaroo Beach — Season 3</h3>
+      </article>
+
+
+      <!-- INTERSTELLAR ELLA -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/9wofqvAsGPw" target="_blank">
+          <img src="https://img.youtube.com/vi/9wofqvAsGPw/hqdefault.jpg" alt="Interstellar Ella Season 2">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Interstellar Ella — Season 2</h3>
+      </article>
+
+
+      <!-- GREEN SQUAD -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/yS7aDJfSQRg" target="_blank">
+          <img src="https://img.youtube.com/vi/yS7aDJfSQRg/hqdefault.jpg" alt="Green Squad Season 2">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Green Squad — Season 2</h3>
+      </article>
+
+
+      <!-- TINY & TALL -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/6VdcEXZyiDA" target="_blank">
+          <img src="https://img.youtube.com/vi/6VdcEXZyiDA/hqdefault.jpg" alt="Tiny & Tall Season 2">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Tiny &amp; Tall — Season 2</h3>
+      </article>
+
+
+      <!-- 16 HUDSON -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/LcfnQw9PgaY" target="_blank">
+          <img src="https://img.youtube.com/vi/LcfnQw9PgaY/hqdefault.jpg" alt="16 Hudson Season 4">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">16 Hudson — Season 4</h3>
+      </article>
+
+
+      <!-- SUNNY'S QUEST -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/pctMZINZsqE" target="_blank">
+          <img src="https://img.youtube.com/vi/pctMZINZsqE/hqdefault.jpg" alt="Sunny's Quest Season 3">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Sunny's Quest — Season 3</h3>
+      </article>
+
+
+      <!-- WORDSVILLE -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/CebXEg80keM" target="_blank">
+          <img src="https://img.youtube.com/vi/CebXEg80keM/hqdefault.jpg" alt="Wordsville">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Wordsville</h3>
+      </article>
+
+
+      <!-- CAillOU -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/IoTpO7CFLmo" target="_blank">
+          <img src="https://img.youtube.com/vi/IoTpO7CFLmo/hqdefault.jpg" alt="Caillou">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Caillou</h3>
+      </article>
+
+
+      <!-- M IS FOR ME -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/dlw_uyZFkeA" target="_blank">
+          <img src="https://img.youtube.com/vi/dlw_uyZFkeA/hqdefault.jpg" alt="M is For Me">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">M is For Me</h3>
+      </article>
+
+
+      <!-- PAW PATROL SEASON 12 -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/Jb3JpK1oqYM" target="_blank">
+          <img src="https://img.youtube.com/vi/Jb3JpK1oqYM/hqdefault.jpg" alt="PAW Patrol Season 12">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">PAW Patrol — Season 12</h3>
+      </article>
+
+
+      <!-- RUN THE MARBLES -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/MP1p5vJH03Q" target="_blank">
+          <img src="https://img.youtube.com/vi/MP1p5vJH03Q/hqdefault.jpg" alt="Run the Marbles">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Run the Marbles</h3>
+      </article>
+
+
+      <!-- BURPS PART 1 -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/eySXycvvY-g" target="_blank">
+          <img src="https://img.youtube.com/vi/eySXycvvY-g/hqdefault.jpg" alt="Burps, Butts, & Bones Part 1">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Burps, Butts, &amp; Bones — Part 1</h3>
+      </article>
+
+
+      <!-- WOOLLY WOOLLY -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/8rb920LY-ac" target="_blank">
+          <img src="https://img.youtube.com/vi/8rb920LY-ac/hqdefault.jpg" alt="Woolly Woolly">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Woolly Woolly</h3>
+      </article>
+
+
+      <!-- OLGA DA POLGA -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/wlGvWABjigk" target="_blank">
+          <img src="https://img.youtube.com/vi/wlGvWABjigk/hqdefault.jpg" alt="Olga da Polga">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Olga da Polga</h3>
+      </article>
+
+
+      <!-- ODD SQUAD UK S1 -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/3-OrPu03WDE" target="_blank">
+          <img src="https://img.youtube.com/vi/3-OrPu03WDE/hqdefault.jpg" alt="Odd Squad UK Season 1">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Odd Squad UK — Season 1</h3>
+      </article>
+
+
+      <!-- MAKEAWAY TAKEAWAY -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/w_q7oxEa-T0" target="_blank">
+          <img src="https://img.youtube.com/vi/w_q7oxEa-T0/hqdefault.jpg" alt="Makeaway Takeaway">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Makeaway Takeaway</h3>
+      </article>
+
+
+      <!-- BOOSNOO -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/KN98rZfbr9U" target="_blank">
+          <img src="https://img.youtube.com/vi/KN98rZfbr9U/hqdefault.jpg" alt="BooSnoo!">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">BooSnoo!</h3>
+      </article>
+
+
+      <!-- HAPPY PLACE -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/CblM_yHIxwc" target="_blank">
+          <img src="https://img.youtube.com/vi/CblM_yHIxwc/hqdefault.jpg" alt="Happy Place">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Happy Place</h3>
+      </article>
+
+
+      <!-- TRADING SKILLS S2 -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/qaB73q3QAk8" target="_blank">
+          <img src="https://img.youtube.com/vi/qaB73q3QAk8/hqdefault.jpg" alt="Trading Skills Season 2">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Trading Skills — Season 2</h3>
+      </article>
+
+
+      <!-- MOJO SWOPTOPS -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/wo_UM2O46tU" target="_blank">
+          <img src="https://img.youtube.com/vi/wo_UM2O46tU/hqdefault.jpg" alt="Mojo Swoptops">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Mojo Swoptops</h3>
+      </article>
+
+
+      <!-- PAW PATROL S11 -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/OZZx_dYIHbs" target="_blank">
+          <img src="https://img.youtube.com/vi/OZZx_dYIHbs/hqdefault.jpg" alt="PAW Patrol Season 11">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">PAW Patrol — Season 11</h3>
+      </article>
+
+
+      <!-- FLOWER & FLOUR -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/1k_rRb7KCLE" target="_blank">
+          <img src="https://img.youtube.com/vi/1k_rRb7KCLE/hqdefault.jpg" alt="Flower & Flour">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Flower &amp; Flour</h3>
+      </article>
+
+
+      <!-- COLLAR OF DUTY KIDS -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/YECU0e_vPH4" target="_blank">
+          <img src="https://img.youtube.com/vi/YECU0e_vPH4/hqdefault.jpg" alt="Collar of Duty Kids">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Collar of Duty Kids</h3>
+      </article>
+
+
+      <!-- VEGESAURS -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/idM9PfDPrcg" target="_blank">
+          <img src="https://img.youtube.com/vi/idM9PfDPrcg/hqdefault.jpg" alt="Vegesaurs Season 3">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Vegesaurs — Season 3</h3>
+      </article>
+
+
+      <!-- TRADING SKILLS S1 -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/bXCzknlkIKM" target="_blank">
+          <img src="https://img.youtube.com/vi/bXCzknlkIKM/hqdefault.jpg" alt="Trading Skills Season 1">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Trading Skills — Season 1</h3>
+      </article>
+
+
+      <!-- AUDREY'S SHELTER -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/T-rMnM7d2b0" target="_blank">
+          <img src="https://img.youtube.com/vi/T-rMnM7d2b0/hqdefault.jpg" alt="Audrey's Shelter">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">Audrey's Shelter</h3>
+      </article>
+
+
+      <!-- PAW PATROL CHRISTMAS -->
+
+      <article class="project-card">
+        <a class="thumbnail" href="https://youtu.be/SZLj7Lw8KmM" target="_blank">
+          <img src="https://img.youtube.com/vi/SZLj7Lw8KmM/hqdefault.jpg" alt="PAW Patrol Christmas">
+          <span class="play">▶</span>
+        </a>
+        <h3 class="project-title">PAW Patrol Christmas</h3>
+      </article>
+
+
     </div>
 
-    <h2>Documentary + Factual</h2>
-
-    <p class="category-description">
-      Promos that distill complex stories, personalities
-      and ideas into concise, audience-focused creative.
-    </p>
-
   </div>
 
 
-  <div class="project-grid">
+<!-- VIEW MORE -->
 
-    <article class="project-card">
+<div class="view-more-wrap">
 
-      <a class="thumbnail"
-         href="https://youtu.be/vE0pK6qE4Zk"
-         target="_blank">
+  <button
+    class="view-more-button"
+    id="kids-family-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="kids-family-more"
+    data-closed-text="+ View More Kids & Family"
+    data-open-text="− Show Fewer">
 
-        <img src="https://img.youtube.com/vi/vE0pK6qE4Zk/hqdefault.jpg"
-             alt="The Dating Game">
+    + View More Kids &amp; Family
 
-        <span class="play">▶</span>
+  </button>
 
-      </a>
-
-      <h3 class="project-title">The Dating Game</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-
-    <article class="project-card">
-
-      <a class="thumbnail"
-         href="https://youtu.be/Y94e3xSbpPs"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/Y94e3xSbpPs/hqdefault.jpg"
-             alt="Fanny: The Right To Rock">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">Fanny: The Right To Rock</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-
-    <article class="project-card">
-
-      <a class="thumbnail"
-         href="https://youtu.be/yzdkmQZYLcI"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/yzdkmQZYLcI/hqdefault.jpg"
-             alt="Big If True">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">Big [If True]</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-
-    <article class="project-card">
-
-      <a class="thumbnail"
-         href="https://youtu.be/_hkfCBUGdW0"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/_hkfCBUGdW0/hqdefault.jpg"
-             alt="The Pitch">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">The Pitch</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-
-    <article class="project-card">
-
-      <a class="thumbnail"
-         href="https://youtu.be/qnrHhiOM-c4"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/qnrHhiOM-c4/hqdefault.jpg"
-             alt="CFNY The Spirit of Radio">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">CFNY: The Spirit of Radio</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-
-    <article class="project-card">
-
-      <a class="thumbnail"
-         href="https://youtu.be/KI3otCN0fqI"
-         target="_blank">
-
-        <img src="https://img.youtube.com/vi/KI3otCN0fqI/hqdefault.jpg"
-             alt="My Dad's Tapes">
-
-        <span class="play">▶</span>
-
-      </a>
-
-      <h3 class="project-title">My Dad's Tapes</h3>
-
-      <div class="project-role">
-        Writer · Producer · Editor
-      </div>
-
-    </article>
-
-  </div>
+</div>
 
 </div>
 
@@ -1120,6 +1375,28 @@ footer {
 <footer>
   © 2026 Scott McGuirk
 </footer>
+<script>
 
+document.querySelectorAll('.view-more-button').forEach(button => {
+
+  button.addEventListener('click', function () {
+
+    const targetId = button.getAttribute('aria-controls');
+    const target = document.getElementById(targetId);
+
+    const isOpen = target.classList.toggle('open');
+
+    button.setAttribute('aria-expanded', isOpen);
+
+    const openText = button.dataset.openText || '− Show Fewer';
+    const closedText = button.dataset.closedText || '+ View More';
+
+    button.textContent = isOpen ? openText : closedText;
+
+  });
+
+});
+
+</script>
 </body>
 </html>
