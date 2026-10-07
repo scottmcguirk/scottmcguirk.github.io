@@ -164,7 +164,39 @@ h1 {
   font-size: 18px;
   line-height: 1.65;
 }
+  .more-projects {
+  display: none;
+  grid-column: 1 / -1;
+}
 
+.more-projects.open {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 28px;
+}
+
+.view-more-wrap {
+  text-align: center;
+  margin-top: 55px;
+}
+
+.view-more-button {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #111;
+  padding: 0 0 6px;
+  font-family: inherit;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #111;
+  cursor: pointer;
+  transition: opacity .2s ease;
+}
+
+.view-more-button:hover {
+  opacity: .5;
+}
 
 /* METRICS */
 
@@ -355,39 +387,6 @@ footer {
   font-size: 12px;
 }
 
-  .more-projects {
-  display: none;
-  grid-column: 1 / -1;
-}
-
-.more-projects.open {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 55px 28px;
-}
-
-.view-more-wrap {
-  text-align: center;
-  margin-top: 55px;
-}
-
-.view-more-button {
-  background: none;
-  border: 0;
-  border-bottom: 1px solid #111;
-  padding: 0 0 6px;
-  font-family: inherit;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.8px;
-  color: #111;
-  cursor: pointer;
-  transition: opacity .2s ease;
-}
-
-.view-more-button:hover {
-  opacity: .5;
-}
 
 /* MOBILE */
 
