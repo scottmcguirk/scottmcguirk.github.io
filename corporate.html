@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Internal + Corporate Storytelling | Scott McGuirk</title><style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f1eb;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: .1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* NAV */
+
+nav {
+  padding: 25px 5%;
+  border-bottom: 1px solid #d4d1ca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: .2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  opacity: .45;
+}
+
+/* HERO */
+
+.hero {
+  padding: 90px 5% 105px;
+  background: #101010;
+  color: #fff;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 65px;
+}
+
+.hero-nav a {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #aaa;
+  transition: opacity .2s ease;
+}
+
+.hero-nav a:last-child {
+  text-align: right;
+}
+
+.hero-nav a:hover {
+  opacity: .5;
+}
+
+.number {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(58px, 9vw, 130px);
+  line-height: .9;
+  letter-spacing: -2.5px;
+  margin-bottom: 55px;
+}
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 70px;
+}
+
+.skills {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.hero-copy {
+  font-size: clamp(21px, 2.3vw, 31px);
+  line-height: 1.35;
+  max-width: 750px;
+  letter-spacing: .15px;
+}
+
+/* CATEGORY */
+
+.category {
+  padding: 100px 5% 115px;
+  border-top: 1px solid #ccc8bf;
+}
+
+.category:first-of-type {
+  border-top: 0;
+}
+
+.category-header {
+  max-width: 800px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.category-meta {
+  margin-bottom: 14px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #777;
+}
+
+.category-header h2 {
+  font-size: clamp(42px, 5.5vw, 70px);
+  line-height: 1;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.category-description {
+  max-width: 650px;
+  margin: auto;
+  color: #5c5c5c;
+  font-size: 17px;
+  line-height: 1.65;
+  letter-spacing: .15px;
+}
+
+/* PROJECT GRID */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 28px;
+}
+
+.project-card {
+  min-width: 0;
+}
+
+.thumbnail {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #ddd;
+  margin-bottom: 20px;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.025);
+}
+
+.play {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 46px;
+  height: 46px;
+  background: #f3f1eb;
+  color: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition: transform .2s ease;
+}
+
+.thumbnail:hover .play {
+  transform: scale(1.08);
+}
+
+.project-title {
+  font-size: clamp(20px, 1.7vw, 25px);
+  line-height: 1.18;
+  letter-spacing: 0;
+  margin-bottom: 9px;
+}
+
+.project-role {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777;
+}
+.category-role {
+  margin-top: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  color: #777;
+}
+
+.more-projects {
+  display: none;
+  grid-column: 1 / -1;
+}
+
+.more-projects.open {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px 28px;
+}
+
+.view-more-wrap {
+  text-align: center;
+  margin-top: 55px;
+}
+
+.view-more-button {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #111;
+  padding: 0 0 6px;
+  font-family: inherit;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #111;
+  cursor: pointer;
+  transition: opacity .2s ease;
+}
+
+.view-more-button:hover {
+  opacity: .5;
+}
+/* PREVIOUS / NEXT */
+
+.page-nav {
+  background: #101010;
+  color: #fff;
+  padding: 95px 5% 100px;
+}
+
+.page-nav-inner {
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.page-nav-item:last-child {
+  text-align: right;
+}
+
+.page-nav-label {
+  display: block;
+  color: #777;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.page-nav-title {
+  display: inline-block;
+  font-size: clamp(34px, 4.5vw, 62px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+}
+
+.page-nav-item a:hover {
+  opacity: .55;
+}
+
+footer {
+  background: #101010;
+  color: #666;
+  padding: 25px 5%;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+  nav {
+    padding: 20px;
+  }
+
+  .hero {
+    padding: 65px 20px 80px;
+  }
+
+  .back {
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    font-size: clamp(52px, 16vw, 80px);
+    letter-spacing: -1.5px;
+  }
+
+  .hero-bottom {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .category {
+    padding: 75px 20px 85px;
+  }
+
+  .category-header {
+    margin-bottom: 40px;
+  }
+
+  .page-nav {
+    padding: 70px 20px;
+  }
+
+  .page-nav-inner {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .page-nav-item:last-child {
+    text-align: left;
+  }
+  .hero-nav {
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.hero-nav a {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  max-width: 46%;
+}
+
+}
+@media(max-width: 500px) {
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.more-projects.open {
+  grid-template-columns: 1fr;
+  gap: 45px;
+}
+}
+
+
+/* Corporate page refinements */
+.project-title {font-size:clamp(20px,1.7vw,25px);margin-bottom:0;}
+@media(max-width:500px){.nav-links{gap:14px;font-size:12px}.logo{font-size:15px}}
+</style></head><body><nav><a href="index.html" class="logo">SCOTT McGUIRK</a><div class="nav-links"><a href="index.html#work">Work</a><a href="index.html#about">About</a><a href="mailto:scottiemcguirk@gmail.com">Contact</a></div></nav><main><section class="hero"><div class="wrap"><div class="hero-nav"><a href="youtube.html">← YouTube</a><a href="index.html#work">Selected Work →</a></div><div class="number">05</div><h1>Internal +<br>Corporate<br>Storytelling</h1><div class="hero-bottom"><div class="skills">Producing · Directing · Camera · Editing</div><div class="hero-copy">Human-centred storytelling that celebrates people, achievements and the impact of TVO — from heartfelt documentary moments to playful internal campaigns.</div></div></div></section><section class="category"><div class="wrap"><div class="category-header"><div class="category-meta">TVO</div><h2>Black Student Summer Leadership Program</h2><p class="category-description">An annual five-week program that engages student leaders in an immersive internship across all TVO departments. My role follows the cohort throughout the program, capturing their unfiltered experiences on camera, and producing a capstone graduation video that celebrates their growth. The goal is to showcase the breadth of fun &amp; learning opportunities offered by the program, as well as to trigger some happy tears if we can :)</p></div><div class="project-grid"><article class="project-card"><a class="thumbnail" href="https://youtu.be/pkpjkG58A5g" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/pkpjkG58A5g/hqdefault.jpg" alt="BSSLP — 2026" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">BSSLP — 2026</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/cw61Z0srEQY" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/cw61Z0srEQY/hqdefault.jpg" alt="BSSLP — 2025" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">BSSLP — 2025</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/SdS7XF8JkgQ" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/SdS7XF8JkgQ/hqdefault.jpg" alt="BSSLP — 2024" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">BSSLP — 2024</h3></article></div></div></section>
+<section class="category"><div class="wrap"><div class="category-header"><div class="category-meta">TVO</div><h2>Team Milestones</h2><p class="category-description">Storytelling built to celebrate departmental work, achievements, and milestones. These videos were internally-facing, so I was able to have a little bit of fun with them in an effort to keep people engaged during an otherwise-dry organizational Town Hall. Kudos to my &quot;actors&quot; on their first (and final?) roles.</p></div><div class="project-grid"><article class="project-card"><a class="thumbnail" href="https://youtu.be/MUVyimmmenY" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/MUVyimmmenY/hqdefault.jpg" alt="TVO Learn" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">TVO Learn</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/iR463Llt64k" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/iR463Llt64k/hqdefault.jpg" alt="TVO ILC" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">TVO ILC</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/V4HiZYuXv-U" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/V4HiZYuXv-U/hqdefault.jpg" alt="TVO Finance" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">TVO Finance</h3></article><div class="more-projects" id="team-milestones-more"><article class="project-card"><a class="thumbnail" href="https://youtu.be/bg3dKiGl_sM" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/bg3dKiGl_sM/hqdefault.jpg" alt="TVO Legacy Giving" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">TVO Legacy Giving</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/nMaCljvyIjI" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/nMaCljvyIjI/hqdefault.jpg" alt="TVO Docs “Unrigged”" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">TVO Docs “Unrigged”</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/8Jo3K1GdWqo" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/8Jo3K1GdWqo/hqdefault.jpg" alt="TVO Data Systems Enterprises" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">TVO Data Systems Enterprises</h3></article></div></div><div class="view-more-wrap"><button class="view-more-button" type="button" aria-expanded="false" aria-controls="team-milestones-more" data-closed-text="+ View More" data-open-text="− Show Fewer">+ View More</button></div></div></section>
+<section class="category"><div class="wrap"><div class="category-header"><div class="category-meta">TVO</div><h2>Employee Service Awards</h2><p class="category-description">Employee recognition videos ranging from sincere &amp; heartfelt  to scripted comedy. Tone and creative approach for each video was adapted based on the celebrated individual, as well as the mandate for the given year&#x27;s Service Award celebration.</p></div><div class="project-grid"><article class="project-card"><a class="thumbnail" href="https://youtu.be/3RfgH0JXK_I" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/3RfgH0JXK_I/hqdefault.jpg" alt="Mark Ford (Heartfelt)" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Mark Ford (Heartfelt)</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/gOIFLyHiebg" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/gOIFLyHiebg/hqdefault.jpg" alt="Susanna So (Comedy)" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Susanna So (Comedy)</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/aGiUIzQF4Ps" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/aGiUIzQF4Ps/hqdefault.jpg" alt="Greg Marshall (Animated)" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Greg Marshall (Animated)</h3></article><div class="more-projects" id="employee-service-awards-more"><article class="project-card"><a class="thumbnail" href="https://youtu.be/2bYKHoi_Yb0" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/2bYKHoi_Yb0/hqdefault.jpg" alt="Rein Suurallik (Heartfelt)" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Rein Suurallik (Heartfelt)</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/iwi2GWa99OI" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/iwi2GWa99OI/hqdefault.jpg" alt="Theresa Wells (Comedy)" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Theresa Wells (Comedy)</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/BTM5Qt0x7JA" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/BTM5Qt0x7JA/hqdefault.jpg" alt="Maureen Para (Heartfelt)" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Maureen Para (Heartfelt)</h3></article></div></div><div class="view-more-wrap"><button class="view-more-button" type="button" aria-expanded="false" aria-controls="employee-service-awards-more" data-closed-text="+ View More" data-open-text="− Show Fewer">+ View More</button></div></div></section>
+<section class="category"><div class="wrap"><div class="category-header"><div class="category-meta">TVO</div><h2>Testimonials</h2><p class="category-description">Through interviews with TVO employees and customers, I captured personal stories that reveal the impact TVO has had on their professional and everyday lives. These testimonials put real people at the centre of the story, highlighting the meaningful connections, opportunities, and experiences made possible through TVO&#x27;s work.</p></div><div class="project-grid"><article class="project-card"><a class="thumbnail" href="https://youtu.be/I7_CW-ZgDTU" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/I7_CW-ZgDTU/hqdefault.jpg" alt="Why We Watch — Customers" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Why We Watch — Customers</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/Ci7HYRKn0F8" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/Ci7HYRKn0F8/hqdefault.jpg" alt="Inspired Work — Elizabeth" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Inspired Work — Elizabeth</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/kmqTqfiFeYU" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/kmqTqfiFeYU/hqdefault.jpg" alt="A Special Place — Cara" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">A Special Place — Cara</h3></article><div class="more-projects" id="testimonials-more"><article class="project-card"><a class="thumbnail" href="https://youtu.be/U0HvwOGETxE" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/U0HvwOGETxE/hqdefault.jpg" alt="A Positive Impact — Siona" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">A Positive Impact — Siona</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/L7flFWmqcfc" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/L7flFWmqcfc/hqdefault.jpg" alt="First Encounter — Customers" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">First Encounter — Customers</h3></article>
+<article class="project-card"><a class="thumbnail" href="https://youtu.be/k7hc9ZIpPjk" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/k7hc9ZIpPjk/hqdefault.jpg" alt="Inspired Work — Ajuha" loading="lazy"><span class="play">▶</span></a><h3 class="project-title">Inspired Work — Ajuha</h3></article></div></div><div class="view-more-wrap"><button class="view-more-button" type="button" aria-expanded="false" aria-controls="testimonials-more" data-closed-text="+ View More" data-open-text="− Show Fewer">+ View More</button></div></div></section></main><section class="page-nav"><div class="page-nav-inner"><div class="page-nav-item"><a href="youtube.html"><span class="page-nav-label">← Previous</span><span class="page-nav-title">YouTube</span></a></div><div class="page-nav-item"><a href="index.html#work"><span class="page-nav-label">Next →</span><span class="page-nav-title">Selected Work</span></a></div></div></section><footer>© Scott McGuirk</footer><script>document.querySelectorAll('.view-more-button').forEach(button => {button.addEventListener('click',function(){const target=document.getElementById(button.getAttribute('aria-controls'));const isOpen=target.classList.toggle('open');button.setAttribute('aria-expanded',String(isOpen));button.textContent=isOpen?(button.dataset.openText||'− Show Fewer'):(button.dataset.closedText||'+ View More');});});</script></body></html>
