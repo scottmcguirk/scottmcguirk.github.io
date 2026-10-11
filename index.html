@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Scott McGuirk | Writer · Producer · Editor · Creator</title>
+<meta name="description" content="Portfolio of writer, producer, editor and digital creator Scott McGuirk.">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f1eb;
+  color: #111;
+  line-height: 1.5;
+  letter-spacing: .1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* NAV */
+
+nav {
+  padding: 25px 5%;
+  border-bottom: 1px solid #d4d1ca;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  opacity: .45;
+}
+
+/* HERO */
+
+.hero {
+  padding: 110px 5% 130px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: clamp(68px, 11vw, 155px);
+  line-height: .86;
+  letter-spacing: -2.5px;
+  margin-bottom: 55px;
+}
+
+.intro {
+  max-width: 950px;
+  font-size: clamp(22px, 2.5vw, 35px);
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+/* WORK */
+
+.work {
+  background: #101010;
+  color: #fff;
+  padding: 105px 5% 130px;
+}
+
+.work-header h2 {
+  font-size: clamp(45px, 6vw, 80px);
+  letter-spacing: -1.5px;
+}
+
+.work-header h2 {
+  font-size: clamp(45px, 6vw, 80px);
+  letter-spacing: -4px;
+}
+
+.work-header p {
+  max-width: 400px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* WORK CARDS — text-only, equal two-column grid */
+.work-header { margin-bottom: 38px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.grid > a { display: block; min-width: 0; }
+.card {
+  position: relative;
+  background: #202020;
+  border: 1px solid #444;
+  min-height: 310px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 35px;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.grid > a:hover .card,
+.grid > a:focus-visible .card {
+  background: #303030;
+  border-color: #888;
+  transform: translateY(-3px);
+}
+.grid > a:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.card-content { position: relative; z-index: 1; }
+.number { font-size: 12px; color: #aaa; margin-bottom: 16px; letter-spacing: 1.5px; }
+.card h3 { font-size: clamp(30px, 3.6vw, 51px); line-height: 1.05; letter-spacing: -1px; margin-bottom: 18px; }
+.skills { font-size: 14px; color: #bbb; margin-bottom: 15px; }
+.examples { font-size: 14px; color: #aaa; }
+.arrow { position: absolute; top: 25px; right: 30px; font-size: 29px; }
+
+/* ABOUT */
+
+.about {
+  padding: 130px 5%;
+}
+
+.about .label {
+  max-width: 1400px;
+  margin: 0 auto 50px;
+}
+
+.about-content {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(280px, .8fr) 1.6fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-photo {
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.about-main {
+  font-size: clamp(27px, 3.3vw, 46px);
+  line-height: 1.2;
+  letter-spacing: -.5px;
+}
+
+.about-small {
+  margin-top: 35px;
+  max-width: 700px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* EXPERIENCE */
+
+.experience {
+  padding: 0 5% 110px;
+}
+
+.experience-inner {
+  border-top: 1px solid #d4d1ca;
+  padding-top: 55px;
+}
+
+.experience h2 {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.credit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 18px 0;
+  border-top: 1px solid #d4d1ca;
+  font-size: 18px;
+}
+
+/* CONTACT */
+
+.contact {
+  background: #101010;
+  color: white;
+  padding: 120px 5%;
+}
+
+.contact-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.contact h2 {
+  font-size: clamp(55px, 9vw, 125px);
+  line-height: .86;
+  letter-spacing: -2.5px;
+  margin-bottom: 60px;
+}
+
+.email {
+  display: inline-block;
+  font-size: clamp(19px, 2vw, 28px);
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.email:hover {
+  opacity: .55;
+}
+
+footer {
+  background: #101010;
+  color: #666;
+  padding: 25px 5%;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+  nav {
+    padding: 20px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a:nth-child(2) {
+    display: none;
+  }
+
+  .hero {
+    padding: 80px 20px 95px;
+  }
+
+  h1 {
+    letter-spacing: -4px;
+  }
+
+  .work {
+    padding: 75px 20px;
+  }
+
+  .work-header {
+    display: block;
+  }
+
+  .work-header p {
+    margin-top: 15px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 275px;
+    padding: 25px;
+  }
+
+.about {
+  padding: 90px 20px;
+}
+
+.about .label {
+  margin-bottom: 35px;
+}
+
+.about-content {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.about-photo {
+  max-width: 430px;
+}
+
+  .experience {
+    padding: 0 20px 80px;
+  }
+
+  .credit {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .contact {
+    padding: 90px 20px;
+  }
+
+  .contact h2 {
+    letter-spacing: -3px;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<nav>
+
+  <div class="logo">
+    SCOTT McGUIRK
+  </div>
+
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+</nav>
+
+
+<main>
+
+<section class="hero">
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      Writer · Producer · Editor · Creator
+    </div>
+
+    <h1>
+      Scott<br>McGuirk
+    </h1>
+
+    <div class="intro">
+      I create stories for screens - from
+      scripted television and short-form entertainment, to branded campaigns,
+      digital content, and corporate communications.
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="work" id="work">
+
+<div class="wrap">
+
+  <div class="work-header">
+
+    <h2>Selected Work</h2>
+
+  </div>
+
+
+  <div class="grid">
+    <a href="scripted.html">
+      <article class="card">
+        <div class="arrow" aria-hidden="true">↗</div>
+        <div class="card-content">
+          <div class="number">01</div>
+          <h3>Scripted TV</h3>
+          <div class="skills">Writing</div>
+          <div class="examples">Dino Ranch · Gary's Magic Fort · Kingdom Force</div>
+        </div>
+      </article>
+    </a>
+
+    <a href="short-form.html">
+      <article class="card">
+        <div class="arrow" aria-hidden="true">↗</div>
+        <div class="card-content">
+          <div class="number">02</div>
+          <h3>Short-Form +<br>Interstitials</h3>
+          <div class="skills">Writing · Directing · Producing</div>
+          <div class="examples">CBC Kids · TVOkids</div>
+        </div>
+      </article>
+    </a>
+
+    <a href="promos.html">
+      <article class="card">
+        <div class="arrow" aria-hidden="true">↗</div>
+        <div class="card-content">
+          <div class="number">03</div>
+          <h3>Promos +<br>Campaigns</h3>
+          <div class="skills">Writing · Producing · Editing</div>
+          <div class="examples">TVO Docs · TVOkids · TVO Today</div>
+        </div>
+      </article>
+    </a>
+
+    <a href="youtube.html">
+      <article class="card">
+        <div class="arrow" aria-hidden="true">↗</div>
+        <div class="card-content">
+          <div class="number">04</div>
+          <h3>YouTube</h3>
+          <div class="skills">Hosting · Writing · Editing · Strategizing</div>
+          <div class="examples">Great X-Mentations</div>
+        </div>
+      </article>
+    </a>
+
+    <a href="corporate.html">
+      <article class="card">
+        <div class="arrow" aria-hidden="true">↗</div>
+        <div class="card-content">
+          <div class="number">05</div>
+          <h3>Corporate Storytelling</h3>
+          <div class="skills">Producing · Directing · Filming · Editing</div>
+          <div class="examples">TVO</div>
+        </div>
+      </article>
+    </a>
+
+    <a href="fun-stuff.html">
+      <article class="card">
+        <div class="arrow" aria-hidden="true">↗</div>
+        <div class="card-content">
+          <div class="number">06</div>
+          <h3>Fun Stuff</h3>
+          <div class="skills">Creative Direction · Producing · Design · Editing</div>
+          <div class="examples">Travel · Football · Drag + Performance</div>
+        </div>
+      </article>
+    </a>
+  </div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="about">
+
+  <div class="label">
+    About
+  </div>
+
+  <div class="about-content">
+
+    <div class="about-photo">
+      <img
+        src="Scott Milo.jpeg"
+        alt="Scott McGuirk">
+    </div>
+
+    <div class="about-copy">
+
+      <div class="about-main">
+        Toronto-based storyteller who creates entertaining content
+        spanning genres and formats, with a focus on kids &amp; family.
+      </div>
+
+      <div class="about-small">
+        I've worked across television and digital media, with experience
+        across the full production lifecycle, including scripted writing,
+        producing, directing, shooting, video editing and content strategy.
+        I bring a writer's eye to production and a producer's perspective
+        to the page.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="experience">
+
+<div class="experience-inner wrap">
+
+  <h2>Selected Experience</h2>
+
+<div class="credit">
+  <strong>TVO / TVOkids</strong>
+  <span>Digital Media Producer · Video Editor</span>
+</div>
+
+<div class="credit">
+  <strong>CBC Kids</strong>
+  <span>Producer · Writer</span>
+</div>
+
+<div class="credit">
+  <strong>Industrial Brothers</strong>
+  <span>Writer · Coordinator · Project Manager</span>
+</div>
+
+<div class="credit">
+  <strong>Independent</strong>
+  <span>Freelance Writer · Content Creator</span>
+</div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+<div class="contact-inner wrap">
+
+  <div class="contact-label">
+    Get in touch
+  </div>
+
+  <h2>
+    Let's make<br>
+    something.
+  </h2>
+
+  <a
+    class="email"
+    href="mailto:scottiemcguirk@gmail.com">
+    scottiemcguirk@gmail.com
+  </a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+  © 2026 Scott McGuirk
+</footer>
+
+</body>
+</html>
